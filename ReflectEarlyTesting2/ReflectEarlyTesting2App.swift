@@ -10,25 +10,30 @@ import SwiftUI
 
 @main
 struct ReflectEarlyTesting2App: App {
-    
-    @State var authenticated = false
+    @ObservedObject private var authenticationService = AuthenticationService.authenticationService
     
     init() {
         FirebaseApp.configure()
+        AuthenticationService.authenticationService.setup()
     }
     
     var body: some Scene {
         WindowGroup {
-            Group {
-                if authenticated {
-                    HomeScreenView()
-                } else {
-                    InitialLoginView()
+            TabView {
+                Group {
+                    if authenticationService.isAuthenticated {
+                        HomeScreenView()
+                    } else {
+                        InitialLoginView()
+                    }
+                }.tabItem {
+                    Label("", systemImage: "house")
                 }
-            }.onAppear() {
-                let handle = Auth.auth().addStateDidChangeListener { auth, user in
-                    self.authenticated = user != nil
-                }
+                
+                ColorExample()
+                    .tabItem {
+                        Label("", systemImage: "pencil")
+                    }
             }
         }
     }
