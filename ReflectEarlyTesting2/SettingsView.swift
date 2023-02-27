@@ -72,7 +72,6 @@ struct SettingsView: View {
             print(signoutError.localizedDescription)
             return
         }
-        userIsLoggedIn = false
     }
 
 }

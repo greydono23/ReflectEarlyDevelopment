@@ -11,13 +11,25 @@ import SwiftUI
 @main
 struct ReflectEarlyTesting2App: App {
     
+    @State var authenticated = false
+    
     init() {
         FirebaseApp.configure()
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                if authenticated {
+                    HomeScreenView()
+                } else {
+                    InitialLoginView()
+                }
+            }.onAppear() {
+                let handle = Auth.auth().addStateDidChangeListener { auth, user in
+                    self.authenticated = user != nil
+                }
+            }
         }
     }
 }
