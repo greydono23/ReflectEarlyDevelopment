@@ -7,14 +7,3 @@
 
 import Foundation
 import SwiftUI
-
-extension ContentView {
-    
-    @MainActor class ContentViewModel: ObservableObject {
-        
-        @Published var screenWidth = UIScreen.main.bounds.width
-        @Published var screenHeight = UIScreen.main.bounds.height
-        
-    }
-    
-}
