@@ -10,9 +10,6 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @Binding var userIsLoggedIn: Bool
-    @Binding var darkMode: Bool
-    
     @State private var parentsVisibility = true
     @State private var counselorsVisibility = true
     @State private var showNewParent = false
@@ -48,10 +45,6 @@ struct SettingsView: View {
 //                })
 //                Toggle("Can View", isOn: $counselorsVisibility)
 //            }
-            
-            Section(header: Text("Appearance")) {
-                Toggle("Dark Mode", isOn: $darkMode)
-            }
             
             Section {
                 Button(role: .destructive) {

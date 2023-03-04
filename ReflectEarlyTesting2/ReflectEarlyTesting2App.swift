@@ -17,24 +17,14 @@ struct ReflectEarlyTesting2App: App {
         AuthenticationService.authenticationService.setup()
     }
     
-    var body: some Scene {
+    var body: some Scene {        
         WindowGroup {
-            TabView {
-                Group {
-                    if authenticationService.isAuthenticated {
-                        HomeScreenView()
-                    } else {
-                        InitialLoginView()
-                    }
-                }.tabItem {
-                    Label("", systemImage: "house")
-                }
-                
-                ColorExample()
-                    .tabItem {
-                        Label("", systemImage: "pencil")
-                    }
+            if authenticationService.isAuthenticated {
+                HomeScreenView()
+            } else {
+                InitialLoginView()
             }
         }
+        
     }
 }

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct InitialLoginView: View {
-    /// Only to be shown once, simple view with options to sign up or login
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -19,7 +20,7 @@ struct InitialLoginView: View {
                     
                     VStack {
                         
-                        Image(true ? "darkModeLogo" : "lightModeLogo")
+                        Image(colorScheme == .dark ? "darkModeLogo" : "lightModeLogo")
                             .resizable()
                             .scaledToFit()
                             .frame(width: UIScreen.main.bounds.width/2)
@@ -47,7 +48,7 @@ struct InitialLoginView: View {
                                 .frame(width: UIScreen.main.bounds.width/7, height: UIScreen.main.bounds.width/7)
                                 .padding(.bottom, 30)
                         }
-                        .foregroundStyle(true ? .white : .black)
+                        .foregroundStyle(colorScheme == .dark ? .white : .black)
                         
                         
                     }
@@ -56,13 +57,13 @@ struct InitialLoginView: View {
                     Spacer()
                     
                     NavigationLink {
-                        SignUpView(userIsLoggedIn: .constant(false), darkMode: .constant(true))
+                        SignUpView()
                     } label: {
                         Text("GET STARTED")
                         //                            .font(.title2)
                             .font(.custom("Teko-Light", size: 30)) // how to make size adaptive
                             .bold()
-                            .foregroundStyle(true ? .black : .white)
+                            .foregroundStyle(colorScheme == .dark ? .black : .white)
                             .frame(width: UIScreen.main.bounds.width-40, height: 60)
                             .background(
                                 Color.mint
@@ -71,7 +72,7 @@ struct InitialLoginView: View {
                     }
                     
                     NavigationLink {
-                        LoginView(userIsLoggedIn: .constant(false), darkMode: .constant(true))
+                        LoginView()
                     } label: {
                         Text("I ALREADY HAVE AN ACCOUNT")
                         //                            .font(.title2)
@@ -90,5 +91,11 @@ struct InitialLoginView: View {
                 }
             }
         }
+    }
+}
+
+struct InitialLoginView_Previews: PreviewProvider {
+    static var previews: some View {
+        InitialLoginView()
     }
 }

@@ -9,15 +9,12 @@ import Firebase
 import SwiftUI
 
 struct LoginView: View {
+    @Environment(\.colorScheme) var colorScheme
     
-    @Binding var userIsLoggedIn: Bool
-    @Binding var darkMode: Bool
+    @StateObject private var viewModel = ViewModel()
     
     @State private var screenWidth = UIScreen.main.bounds.width
     @State private var screenHeight = UIScreen.main.bounds.height
-    
-    @State private var email = ""
-    @State private var password = ""
     
     var body: some View {
         
@@ -38,7 +35,6 @@ struct LoginView: View {
                             .frame(width: screenWidth/1.25)
                             .multilineTextAlignment(.center)
                     }
-                    .foregroundColor(darkMode ? .white : .black)
                     
                     Spacer()
                     Spacer()
@@ -46,26 +42,26 @@ struct LoginView: View {
                     VStack {
 
                         VStack {
-                            TextField("example@email.com", text: $email)
+                            TextField("example@email.com", text: $viewModel.email)
 //                                .font(.headline)
                                 .font(.custom("Teko-Light", size: 25)) // how to make size adaptive?
                                 .frame(width: screenWidth-50)
                             
                             Rectangle()
                                 .frame(width: screenWidth-50, height: 2)
-                                .foregroundStyle(validEmail() ? .mint : .gray)
+                                .foregroundStyle(viewModel.validEmail() ? .mint : .gray)
                         }
                         .padding(.bottom, 10)
 
                         VStack {
-                            SecureField("password", text: $password)
+                            SecureField("password", text: $viewModel.password)
                                 .font(.custom("Teko-Light", size: 25)) // how to make size adaptive?
 //                                .font(.headline)
                                 .frame(width: screenWidth-50)
                             
                             Rectangle()
                                 .frame(width: screenWidth-50, height: 2)
-                                .foregroundStyle(validPassword() ? .mint : .gray)
+                                .foregroundStyle(viewModel.validPassword() ? .mint : .gray)
                         }
                         .padding(.bottom, 10)
                     }
@@ -75,57 +71,38 @@ struct LoginView: View {
                     } label: {
                         Text("FORGOT PASSWORD?")
                             .font(.custom("Teko-Light", size: 25)) // how to make size adaptive?
-                            .foregroundColor(darkMode ? .white : .black)
+                            .foregroundStyle(colorScheme == .dark ? .white : .black)
                             .padding([.top, .bottom], 10)
                     }
                     
                     Spacer()
                     
                     Button {
-                        if validEmail() && validPassword() {
-                            userLogin()
+                        if viewModel.validLogin() {
+                            viewModel.userLogin()
                         }
                     } label: {
                         Text("LOGIN")
 //                            .font(.title2)
                             .font(.custom("Teko-Light", size: 30)) // how to make size adaptive?
                             .bold()
-                            .foregroundColor(darkMode ? .black : .white)
+                            .foregroundColor(colorScheme == .dark ? .black : .white)
                             .frame(width: screenWidth/2, height: 50)
                             .background(.mint)
                             .cornerRadius(20)
                     }
                 }
             }
-            .preferredColorScheme(darkMode ? .dark : .light)
         }
     }
     
-    func validEmail() -> Bool {
-        email.contains("@") && email.contains(".")
-    }
     
-    func validPassword() -> Bool {
-        password.count >= 8
-    }
-    
-    func userLogin() {
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            if error != nil {
-                print(error!.localizedDescription)
-                userIsLoggedIn = false
-                return
-            }
-        }
-        userIsLoggedIn = true
-    }
 }
     
 
 
 struct LoginView_Previews: PreviewProvider {
-    private var bool = false
     static var previews: some View {
-        LoginView(userIsLoggedIn: .constant(true), darkMode: .constant(true))
+        LoginView()
     }
 }

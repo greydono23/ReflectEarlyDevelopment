@@ -12,7 +12,6 @@ struct HomeScreenView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                
                 TabView {
                     UserView()
                         .tabItem {
@@ -24,7 +23,7 @@ struct HomeScreenView: View {
                             Label("", systemImage: "square.and.pencil")
                         }
                     
-                    SettingsView(userIsLoggedIn: .constant(true), darkMode: .constant(true))
+                    AccountView()
                         .tabItem {
                             Label("", systemImage: "person.circle")
                         }
@@ -33,5 +32,11 @@ struct HomeScreenView: View {
             }
             .ignoresSafeArea()
         }
+    }
+}
+
+struct HomeScreenView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeScreenView()
     }
 }
