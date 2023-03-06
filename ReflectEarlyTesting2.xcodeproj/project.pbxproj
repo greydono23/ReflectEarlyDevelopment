@@ -17,7 +17,7 @@
 		7F52DCB929AAA27100261C02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F52DCB829AAA27100261C02 /* ContentView.swift */; };
 		7F52DCC029AAA29000261C02 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F52DCBA29AAA28F00261C02 /* UserView.swift */; };
 		7F52DCC129AAA29000261C02 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F52DCBB29AAA28F00261C02 /* ContentView-ViewModel.swift */; };
-		7F52DCC229AAA29000261C02 /* NewNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F52DCBC29AAA28F00261C02 /* NewNoteView.swift */; };
+		7F52DCC229AAA29000261C02 /* ChooseNoteTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F52DCBC29AAA28F00261C02 /* ChooseNoteTypeView.swift */; };
 		7F52DCC329AAA29000261C02 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F52DCBD29AAA28F00261C02 /* SignUpView.swift */; };
 		7F52DCC429AAA29000261C02 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F52DCBE29AAA29000261C02 /* LoginView.swift */; };
 		7F52DCC529AAA29000261C02 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F52DCBF29AAA29000261C02 /* SettingsView.swift */; };
@@ -37,6 +37,32 @@
 		7F9937E729B064390090283E /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937E629B064390090283E /* AccountView.swift */; };
 		7F9937E929B10BA40090283E /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937E829B10BA40090283E /* AccountViewModel.swift */; };
 		7F9937EB29B1AD920090283E /* AuthTestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937EA29B1AD920090283E /* AuthTestService.swift */; };
+		7F9937ED29B3C11F0090283E /* CommunityServiceNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937EC29B3C11F0090283E /* CommunityServiceNoteView.swift */; };
+		7F9937EF29B3C8F00090283E /* CommunityServiceNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937EE29B3C8F00090283E /* CommunityServiceNote.swift */; };
+		7F9937F129B3C9610090283E /* CommunityServiceNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937F029B3C9610090283E /* CommunityServiceNoteViewModel.swift */; };
+		7F9937F329B3C9A90090283E /* CommunityServiceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937F229B3C9A90090283E /* CommunityServiceRepository.swift */; };
+		7F9937F629B3CBD70090283E /* CommunityServiceNoteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937F529B3CBD70090283E /* CommunityServiceNoteItemView.swift */; };
+		7F9937F829B3D72E0090283E /* IndependentProjectNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937F729B3D72E0090283E /* IndependentProjectNoteView.swift */; };
+		7F9937FA29B3D94D0090283E /* IndependentProjectNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937F929B3D94D0090283E /* IndependentProjectNote.swift */; };
+		7F9937FE29B3DA0D0090283E /* IndependentProjectNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937FD29B3DA0D0090283E /* IndependentProjectNoteViewModel.swift */; };
+		7F99380029B3DA3D0090283E /* IndependentProjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937FF29B3DA3D0090283E /* IndependentProjectRepository.swift */; };
+		7F99380229B3DADD0090283E /* IndependentProjectNoteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99380129B3DADD0090283E /* IndependentProjectNoteItemView.swift */; };
+		7F99380429B45CE20090283E /* SummerProgramNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99380329B45CE20090283E /* SummerProgramNoteView.swift */; };
+		7F99380629B45E640090283E /* SummerProgramNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99380529B45E640090283E /* SummerProgramNote.swift */; };
+		7F99380829B45F180090283E /* SummerProgramNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99380729B45F180090283E /* SummerProgramNoteViewModel.swift */; };
+		7F99380A29B45F3E0090283E /* SummerProgramRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99380929B45F3E0090283E /* SummerProgramRepository.swift */; };
+		7F99380C29B4604E0090283E /* SummerProgramNoteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99380B29B4604E0090283E /* SummerProgramNoteItemView.swift */; };
+		7F99380E29B4DDAD0090283E /* WorkExperienceNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99380D29B4DDAD0090283E /* WorkExperienceNoteView.swift */; };
+		7F99381029B4DE690090283E /* SummerWorkNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99380F29B4DE690090283E /* SummerWorkNote.swift */; };
+		7F99381429B4DF9F0090283E /* WorkExperienceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99381329B4DF9F0090283E /* WorkExperienceRepository.swift */; };
+		7F99381629B4E0210090283E /* WorkExperienceNoteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99381529B4E0210090283E /* WorkExperienceNoteItemView.swift */; };
+		7F99381829B4E2A20090283E /* GeneralNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99381729B4E2A20090283E /* GeneralNoteView.swift */; };
+		7F99381A29B4E4570090283E /* GeneralNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99381929B4E4570090283E /* GeneralNoteViewModel.swift */; };
+		7F99381C29B4E4F60090283E /* GeneralNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99381B29B4E4F60090283E /* GeneralNote.swift */; };
+		7F99381E29B4E5B80090283E /* WorkExperienceNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99381D29B4E5B80090283E /* WorkExperienceNoteViewModel.swift */; };
+		7F99382029B4E5D90090283E /* GeneralRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99381F29B4E5D90090283E /* GeneralRepository.swift */; };
+		7F99382229B4E6260090283E /* GeneralNoteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99382129B4E6260090283E /* GeneralNoteItemView.swift */; };
+		7F99382429B6881C0090283E /* ViewSchoolWorkNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99382329B6881C0090283E /* ViewSchoolWorkNotes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +77,7 @@
 		7F52DCB829AAA27100261C02 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7F52DCBA29AAA28F00261C02 /* UserView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		7F52DCBB29AAA28F00261C02 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
-		7F52DCBC29AAA28F00261C02 /* NewNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewNoteView.swift; sourceTree = "<group>"; };
+		7F52DCBC29AAA28F00261C02 /* ChooseNoteTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseNoteTypeView.swift; sourceTree = "<group>"; };
 		7F52DCBD29AAA28F00261C02 /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		7F52DCBE29AAA29000261C02 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7F52DCBF29AAA29000261C02 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -69,6 +95,32 @@
 		7F9937E629B064390090283E /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		7F9937E829B10BA40090283E /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		7F9937EA29B1AD920090283E /* AuthTestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTestService.swift; sourceTree = "<group>"; };
+		7F9937EC29B3C11F0090283E /* CommunityServiceNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityServiceNoteView.swift; sourceTree = "<group>"; };
+		7F9937EE29B3C8F00090283E /* CommunityServiceNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityServiceNote.swift; sourceTree = "<group>"; };
+		7F9937F029B3C9610090283E /* CommunityServiceNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityServiceNoteViewModel.swift; sourceTree = "<group>"; };
+		7F9937F229B3C9A90090283E /* CommunityServiceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityServiceRepository.swift; sourceTree = "<group>"; };
+		7F9937F529B3CBD70090283E /* CommunityServiceNoteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityServiceNoteItemView.swift; sourceTree = "<group>"; };
+		7F9937F729B3D72E0090283E /* IndependentProjectNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentProjectNoteView.swift; sourceTree = "<group>"; };
+		7F9937F929B3D94D0090283E /* IndependentProjectNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentProjectNote.swift; sourceTree = "<group>"; };
+		7F9937FD29B3DA0D0090283E /* IndependentProjectNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentProjectNoteViewModel.swift; sourceTree = "<group>"; };
+		7F9937FF29B3DA3D0090283E /* IndependentProjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentProjectRepository.swift; sourceTree = "<group>"; };
+		7F99380129B3DADD0090283E /* IndependentProjectNoteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentProjectNoteItemView.swift; sourceTree = "<group>"; };
+		7F99380329B45CE20090283E /* SummerProgramNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerProgramNoteView.swift; sourceTree = "<group>"; };
+		7F99380529B45E640090283E /* SummerProgramNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerProgramNote.swift; sourceTree = "<group>"; };
+		7F99380729B45F180090283E /* SummerProgramNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerProgramNoteViewModel.swift; sourceTree = "<group>"; };
+		7F99380929B45F3E0090283E /* SummerProgramRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerProgramRepository.swift; sourceTree = "<group>"; };
+		7F99380B29B4604E0090283E /* SummerProgramNoteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerProgramNoteItemView.swift; sourceTree = "<group>"; };
+		7F99380D29B4DDAD0090283E /* WorkExperienceNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkExperienceNoteView.swift; sourceTree = "<group>"; };
+		7F99380F29B4DE690090283E /* SummerWorkNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerWorkNote.swift; sourceTree = "<group>"; };
+		7F99381329B4DF9F0090283E /* WorkExperienceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkExperienceRepository.swift; sourceTree = "<group>"; };
+		7F99381529B4E0210090283E /* WorkExperienceNoteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkExperienceNoteItemView.swift; sourceTree = "<group>"; };
+		7F99381729B4E2A20090283E /* GeneralNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNoteView.swift; sourceTree = "<group>"; };
+		7F99381929B4E4570090283E /* GeneralNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNoteViewModel.swift; sourceTree = "<group>"; };
+		7F99381B29B4E4F60090283E /* GeneralNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNote.swift; sourceTree = "<group>"; };
+		7F99381D29B4E5B80090283E /* WorkExperienceNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkExperienceNoteViewModel.swift; sourceTree = "<group>"; };
+		7F99381F29B4E5D90090283E /* GeneralRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralRepository.swift; sourceTree = "<group>"; };
+		7F99382129B4E6260090283E /* GeneralNoteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralNoteItemView.swift; sourceTree = "<group>"; };
+		7F99382329B6881C0090283E /* ViewSchoolWorkNotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSchoolWorkNotes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,11 +215,17 @@
 		7F9937C829AE3E1B0090283E /* NewNoteViews */ = {
 			isa = PBXGroup;
 			children = (
-				7F52DCBC29AAA28F00261C02 /* NewNoteView.swift */,
+				7F52DCBC29AAA28F00261C02 /* ChooseNoteTypeView.swift */,
 				7F9937CF29AE4EAE0090283E /* SchoolWorkNoteView.swift */,
+				7F9937EC29B3C11F0090283E /* CommunityServiceNoteView.swift */,
+				7F9937F729B3D72E0090283E /* IndependentProjectNoteView.swift */,
+				7F99380329B45CE20090283E /* SummerProgramNoteView.swift */,
+				7F99380D29B4DDAD0090283E /* WorkExperienceNoteView.swift */,
+				7F99381729B4E2A20090283E /* GeneralNoteView.swift */,
+				7F9937F429B3CBB50090283E /* NoteViews */,
 				7F9937D729AFE5A30090283E /* Models */,
-				7F9937D429AFE35B0090283E /* Repositories */,
 				7F9937D129AE4FD10090283E /* ViewModels */,
+				7F9937D429AFE35B0090283E /* Repositories */,
 			);
 			name = NewNoteViews;
 			sourceTree = "<group>";
@@ -184,6 +242,7 @@
 		7F9937CA29AE3E5B0090283E /* ToBeDeleted */ = {
 			isa = PBXGroup;
 			children = (
+				7F9937E129B030CB0090283E /* SchoolWorkNoteItemView-ViewModel.swift */,
 				7F52DCB829AAA27100261C02 /* ContentView.swift */,
 				7F52DCBB29AAA28F00261C02 /* ContentView-ViewModel.swift */,
 				2872CBBB29AD6DF200952AE5 /* ColorExample.swift */,
@@ -207,6 +266,11 @@
 			isa = PBXGroup;
 			children = (
 				7F9937E429B05DF90090283E /* SchoolWorkNoteViewModel.swift */,
+				7F9937F029B3C9610090283E /* CommunityServiceNoteViewModel.swift */,
+				7F9937FD29B3DA0D0090283E /* IndependentProjectNoteViewModel.swift */,
+				7F99380729B45F180090283E /* SummerProgramNoteViewModel.swift */,
+				7F99381D29B4E5B80090283E /* WorkExperienceNoteViewModel.swift */,
+				7F99381929B4E4570090283E /* GeneralNoteViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -215,6 +279,11 @@
 			isa = PBXGroup;
 			children = (
 				7F9937D529AFE3850090283E /* SchoolWorkRepository.swift */,
+				7F9937F229B3C9A90090283E /* CommunityServiceRepository.swift */,
+				7F9937FF29B3DA3D0090283E /* IndependentProjectRepository.swift */,
+				7F99380929B45F3E0090283E /* SummerProgramRepository.swift */,
+				7F99381329B4DF9F0090283E /* WorkExperienceRepository.swift */,
+				7F99381F29B4E5D90090283E /* GeneralRepository.swift */,
 			);
 			name = Repositories;
 			sourceTree = "<group>";
@@ -223,6 +292,11 @@
 			isa = PBXGroup;
 			children = (
 				7F9937D829AFE5C50090283E /* SchoolWorkNote.swift */,
+				7F9937EE29B3C8F00090283E /* CommunityServiceNote.swift */,
+				7F9937F929B3D94D0090283E /* IndependentProjectNote.swift */,
+				7F99380529B45E640090283E /* SummerProgramNote.swift */,
+				7F99380F29B4DE690090283E /* SummerWorkNote.swift */,
+				7F99381B29B4E4F60090283E /* GeneralNote.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -241,27 +315,31 @@
 				7F52DCBA29AAA28F00261C02 /* UserView.swift */,
 				7F9937E629B064390090283E /* AccountView.swift */,
 				7F52DCBF29AAA29000261C02 /* SettingsView.swift */,
-				7F9937DD29B030710090283E /* SchoolWorkNoteItemView.swift */,
-				7F9937E029B030A60090283E /* Repositories */,
 				7F9937E329B032E50090283E /* ViewModels */,
+				7F99382329B6881C0090283E /* ViewSchoolWorkNotes.swift */,
 			);
 			name = MainViews;
-			sourceTree = "<group>";
-		};
-		7F9937E029B030A60090283E /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Repositories;
 			sourceTree = "<group>";
 		};
 		7F9937E329B032E50090283E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				7F9937E129B030CB0090283E /* SchoolWorkNoteItemView-ViewModel.swift */,
 				7F9937E829B10BA40090283E /* AccountViewModel.swift */,
 			);
 			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		7F9937F429B3CBB50090283E /* NoteViews */ = {
+			isa = PBXGroup;
+			children = (
+				7F9937DD29B030710090283E /* SchoolWorkNoteItemView.swift */,
+				7F9937F529B3CBD70090283E /* CommunityServiceNoteItemView.swift */,
+				7F99380129B3DADD0090283E /* IndependentProjectNoteItemView.swift */,
+				7F99380B29B4604E0090283E /* SummerProgramNoteItemView.swift */,
+				7F99381529B4E0210090283E /* WorkExperienceNoteItemView.swift */,
+				7F99382129B4E6260090283E /* GeneralNoteItemView.swift */,
+			);
+			name = NoteViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,25 +423,51 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F9937D929AFE5C50090283E /* SchoolWorkNote.swift in Sources */,
+				7F99381029B4DE690090283E /* SummerWorkNote.swift in Sources */,
 				2872CBBC29AD6DF200952AE5 /* ColorExample.swift in Sources */,
 				7F52DCB929AAA27100261C02 /* ContentView.swift in Sources */,
 				7F9937E529B05DF90090283E /* SchoolWorkNoteViewModel.swift in Sources */,
+				7F99382029B4E5D90090283E /* GeneralRepository.swift in Sources */,
 				2872CBBA29AD69B000952AE5 /* InitialLoginView.swift in Sources */,
 				2872CBBE29AD6F3C00952AE5 /* AuthenticationService.swift in Sources */,
+				7F99380A29B45F3E0090283E /* SummerProgramRepository.swift in Sources */,
+				7F99380C29B4604E0090283E /* SummerProgramNoteItemView.swift in Sources */,
+				7F99382429B6881C0090283E /* ViewSchoolWorkNotes.swift in Sources */,
 				7F9937DE29B030710090283E /* SchoolWorkNoteItemView.swift in Sources */,
+				7F99380229B3DADD0090283E /* IndependentProjectNoteItemView.swift in Sources */,
+				7F99380829B45F180090283E /* SummerProgramNoteViewModel.swift in Sources */,
+				7F99381429B4DF9F0090283E /* WorkExperienceRepository.swift in Sources */,
+				7F99380429B45CE20090283E /* SummerProgramNoteView.swift in Sources */,
 				7F52DCC529AAA29000261C02 /* SettingsView.swift in Sources */,
+				7F99381E29B4E5B80090283E /* WorkExperienceNoteViewModel.swift in Sources */,
+				7F9937EF29B3C8F00090283E /* CommunityServiceNote.swift in Sources */,
+				7F99382229B4E6260090283E /* GeneralNoteItemView.swift in Sources */,
+				7F99381C29B4E4F60090283E /* GeneralNote.swift in Sources */,
+				7F9937F329B3C9A90090283E /* CommunityServiceRepository.swift in Sources */,
+				7F99380029B3DA3D0090283E /* IndependentProjectRepository.swift in Sources */,
+				7F9937F829B3D72E0090283E /* IndependentProjectNoteView.swift in Sources */,
 				7F9937E729B064390090283E /* AccountView.swift in Sources */,
+				7F9937F629B3CBD70090283E /* CommunityServiceNoteItemView.swift in Sources */,
+				7F99380629B45E640090283E /* SummerProgramNote.swift in Sources */,
 				7F52DCC429AAA29000261C02 /* LoginView.swift in Sources */,
 				7F9937E929B10BA40090283E /* AccountViewModel.swift in Sources */,
 				7F9937BC29AD8DCE0090283E /* SignUpView-ViewModel.swift in Sources */,
+				7F99380E29B4DDAD0090283E /* WorkExperienceNoteView.swift in Sources */,
 				2872CBB829AD694A00952AE5 /* HomeScreenView.swift in Sources */,
+				7F99381A29B4E4570090283E /* GeneralNoteViewModel.swift in Sources */,
 				7F52DCC129AAA29000261C02 /* ContentView-ViewModel.swift in Sources */,
+				7F99381629B4E0210090283E /* WorkExperienceNoteItemView.swift in Sources */,
 				7F9937D629AFE3850090283E /* SchoolWorkRepository.swift in Sources */,
 				7F52DCC029AAA29000261C02 /* UserView.swift in Sources */,
-				7F52DCC229AAA29000261C02 /* NewNoteView.swift in Sources */,
+				7F9937ED29B3C11F0090283E /* CommunityServiceNoteView.swift in Sources */,
+				7F9937FE29B3DA0D0090283E /* IndependentProjectNoteViewModel.swift in Sources */,
+				7F52DCC229AAA29000261C02 /* ChooseNoteTypeView.swift in Sources */,
 				7F9937BE29ADB40F0090283E /* LoginView-ViewModel.swift in Sources */,
+				7F9937F129B3C9610090283E /* CommunityServiceNoteViewModel.swift in Sources */,
 				7F9937EB29B1AD920090283E /* AuthTestService.swift in Sources */,
 				7F52DCC329AAA29000261C02 /* SignUpView.swift in Sources */,
+				7F99381829B4E2A20090283E /* GeneralNoteView.swift in Sources */,
+				7F9937FA29B3D94D0090283E /* IndependentProjectNote.swift in Sources */,
 				7F52DCA929AAA19400261C02 /* ReflectEarlyTesting2App.swift in Sources */,
 				7F9937D029AE4EAE0090283E /* SchoolWorkNoteView.swift in Sources */,
 				7F9937E229B030CB0090283E /* SchoolWorkNoteItemView-ViewModel.swift in Sources */,

@@ -1,8 +1,8 @@
 //
-//  SchoolWorkRepository.swift
+//  CommunityServiceRepository.swift
 //  ReflectEarlyTesting2
 //
-//  Created by Greydon O'Keefe on 3/1/23.
+//  Created by Greydon O'Keefe on 3/4/23.
 //
 
 import Combine
@@ -10,18 +10,19 @@ import Firebase
 import FirebaseFirestoreSwift
 import Foundation
 
-class SchoolWorkRepository: ObservableObject {
+class CommunityServiceRepository: ObservableObject {
         
     private let authenticationService = AuthenticationService()
 
     private var userId = ""
     
-    @Published var schoolWorkNotes: [SchoolWorkNote] = []
+    @Published var communityServiceNotes: [CommunityServiceNote] = []
     
     private var cancellables: Set<AnyCancellable> = []
         
-    private let path: String = "schoolWorkReflections"
+    private let path: String = "communityServiceReflections"
     private let store = Firestore.firestore()
+    
     
     init() {
         self.userId = Auth.auth().currentUser?.uid ?? ""
@@ -50,13 +51,13 @@ class SchoolWorkRepository: ObservableObject {
                     return
                 }
                 
-                self.schoolWorkNotes = querySnapshot?.documents.compactMap { document in
-                    try? document.data(as: SchoolWorkNote.self)
+                self.communityServiceNotes = querySnapshot?.documents.compactMap { document in
+                    try? document.data(as: CommunityServiceNote.self)
                 } ?? []
             }
     }
     
-    func add(_ note: SchoolWorkNote) {
+    func add(_ note: CommunityServiceNote) {
         do {
             var newNote = note
             newNote.userId = userId

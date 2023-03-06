@@ -1,8 +1,8 @@
 //
-//  SchoolWorkRepository.swift
+//  IndependentProjectRepository.swift
 //  ReflectEarlyTesting2
 //
-//  Created by Greydon O'Keefe on 3/1/23.
+//  Created by Greydon O'Keefe on 3/4/23.
 //
 
 import Combine
@@ -10,17 +10,17 @@ import Firebase
 import FirebaseFirestoreSwift
 import Foundation
 
-class SchoolWorkRepository: ObservableObject {
+class IndependentProjectRepository: ObservableObject {
         
     private let authenticationService = AuthenticationService()
 
     private var userId = ""
     
-    @Published var schoolWorkNotes: [SchoolWorkNote] = []
+    @Published var independentProjectNotes: [IndependentProjectNote] = []
     
     private var cancellables: Set<AnyCancellable> = []
         
-    private let path: String = "schoolWorkReflections"
+    private let path: String = "independentProjectReflections"
     private let store = Firestore.firestore()
     
     init() {
@@ -50,13 +50,13 @@ class SchoolWorkRepository: ObservableObject {
                     return
                 }
                 
-                self.schoolWorkNotes = querySnapshot?.documents.compactMap { document in
-                    try? document.data(as: SchoolWorkNote.self)
+                self.independentProjectNotes = querySnapshot?.documents.compactMap { document in
+                    try? document.data(as: IndependentProjectNote.self)
                 } ?? []
             }
     }
     
-    func add(_ note: SchoolWorkNote) {
+    func add(_ note: IndependentProjectNote) {
         do {
             var newNote = note
             newNote.userId = userId

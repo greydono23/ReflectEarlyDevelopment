@@ -25,7 +25,7 @@ struct UserView: View {
                                 Text("🔥")
                                     .font(.largeTitle)
                             }
-                            Text("Streak")
+                            Text("Weekly Streak")
                                 .bold()
                                 .padding(.top, 1)
                         }

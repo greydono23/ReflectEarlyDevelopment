@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct SchoolWorkNoteView: View {
-    @Environment(\.colorScheme) var colorScheme
     @ObservedObject var accountViewModel: AccountViewModel
     
     @State private var noteName = ""
     @State private var className = ""
-    @State private var experienceDescription = ""
+    @State private var description = ""
     @State private var keyDetail = ""
     @State private var reveal = ""
     @State private var freeThought = ""
@@ -77,7 +76,7 @@ struct SchoolWorkNoteView: View {
                 }
 
                 Section(header: Text("Describe Your Experience").foregroundColor(.mint)) {
-                    TextEditor(text: $experienceDescription)
+                    TextEditor(text: $description)
                 }
                 Section(header: Text("Specific Detail").foregroundColor(.mint)) {
                     TextEditor(text: $keyDetail)
@@ -105,9 +104,9 @@ struct SchoolWorkNoteView: View {
     }
     
     private func addNote() {
-        let note = SchoolWorkNote(noteName: noteName, className: className, description: experienceDescription, keyDetail: keyDetail, revelation: reveal, freeThought: freeThought)
+        let note = SchoolWorkNote(noteName: noteName, className: className, description: description, keyDetail: keyDetail, revelation: reveal, freeThought: freeThought)
         
-        accountViewModel.add(note)
+        accountViewModel.addSchoolWorkNote(note)
     }
     
 }

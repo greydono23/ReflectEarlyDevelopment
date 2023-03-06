@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewNoteView: View {
+struct ChooseNoteTypeView: View {
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
@@ -24,6 +24,7 @@ struct NewNoteView: View {
                             .font(.custom("Teko-Light", size: 40)) // how to make size adaptive?
                         Text("WHICH TYPE OF EXPERIENCE DO YOU WANT TO REFLECT UPON?")
                             .font(.custom("Teko-Light", size: 25)) // how to make size adaptive?
+                            .foregroundColor(.gray)
                             .frame(width: geometry.size.width*(3/4))
                             .multilineTextAlignment(.center)
                     }
@@ -54,7 +55,7 @@ struct NewNoteView: View {
                     
                     /// community service
                     NavigationLink {
-                        // view
+                        CommunityServiceNoteView(accountViewModel: AccountViewModel())
                     } label: {
                         HStack {
                             Image(systemName: "megaphone")
@@ -77,7 +78,7 @@ struct NewNoteView: View {
                     
                     /// Independent Project
                     NavigationLink {
-                        
+                        IndependentProjectNoteView(accountViewModel: AccountViewModel())
                     } label: {
                         HStack {
                             Image(systemName: "keyboard")
@@ -100,7 +101,7 @@ struct NewNoteView: View {
                     
                     /// Summer Program
                     NavigationLink {
-                        
+                        SummerProgramNoteView(accountViewModel: AccountViewModel())
                     } label: {
                         HStack {
                             Image(systemName: "text.magnifyingglass")
@@ -123,7 +124,7 @@ struct NewNoteView: View {
                     
                     /// Work
                     NavigationLink {
-                        
+                        WorkExperienceNoteView(accountViewModel: AccountViewModel())
                     } label: {
                         HStack {
                             Image(systemName: "hands.clap.fill")
@@ -146,7 +147,7 @@ struct NewNoteView: View {
                     
                     /// Work
                     NavigationLink {
-                        
+                        GeneralNoteView(accountViewModel: AccountViewModel())
                     } label: {
                         HStack {
                             Image(systemName: "star.fill")
@@ -175,6 +176,6 @@ struct NewNoteView: View {
 
 struct NewNoteView_Previews: PreviewProvider {
     static var previews: some View {
-        NewNoteView()
+        ChooseNoteTypeView()
     }
 }

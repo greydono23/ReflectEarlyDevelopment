@@ -1,8 +1,8 @@
 //
-//  SchoolWorkRepository.swift
+//  WorkExperienceRepository.swift
 //  ReflectEarlyTesting2
 //
-//  Created by Greydon O'Keefe on 3/1/23.
+//  Created by Greydon O'Keefe on 3/5/23.
 //
 
 import Combine
@@ -10,17 +10,17 @@ import Firebase
 import FirebaseFirestoreSwift
 import Foundation
 
-class SchoolWorkRepository: ObservableObject {
-        
+class WorkExperienceRepository: ObservableObject {
+    
     private let authenticationService = AuthenticationService()
 
     private var userId = ""
     
-    @Published var schoolWorkNotes: [SchoolWorkNote] = []
+    @Published var workExperienceNotes: [WorkExperienceNote] = []
     
     private var cancellables: Set<AnyCancellable> = []
         
-    private let path: String = "schoolWorkReflections"
+    private let path: String = "workExperienceReflections"
     private let store = Firestore.firestore()
     
     init() {
@@ -50,13 +50,13 @@ class SchoolWorkRepository: ObservableObject {
                     return
                 }
                 
-                self.schoolWorkNotes = querySnapshot?.documents.compactMap { document in
-                    try? document.data(as: SchoolWorkNote.self)
+                self.workExperienceNotes = querySnapshot?.documents.compactMap { document in
+                    try? document.data(as: WorkExperienceNote.self)
                 } ?? []
             }
     }
     
-    func add(_ note: SchoolWorkNote) {
+    func add(_ note: WorkExperienceNote) {
         do {
             var newNote = note
             newNote.userId = userId
@@ -65,6 +65,4 @@ class SchoolWorkRepository: ObservableObject {
             print("\(error.localizedDescription)")
         }
     }
-    
 }
-

@@ -13,20 +13,57 @@ struct SchoolWorkNoteItemView: View {
     var noteViewModel: SchoolWorkNoteViewModel
     
     var body: some View {
-        VStack {
-            Text(noteViewModel.note.noteName)
-            Text(noteViewModel.note.className)
-            Text(noteViewModel.note.description)
-            Text(noteViewModel.note.keyDetail)
-            Text(noteViewModel.note.revelation)
-            Text(noteViewModel.note.freeThought)
+            VStack {
+                Group {
+                    Text("Note Name")
+                        .foregroundColor(.gray)
+                        .padding(.top)
+                    Text(noteViewModel.note.noteName)
+                        .padding(.bottom, 5)
+                }
+
+                Group {
+                    Text("Class/Club Name")
+                        .foregroundColor(.gray)
+                    Text(noteViewModel.note.className)
+                        .padding(.bottom, 5)
+                }
+            
+                Group {
+                    Text("Description")
+                        .foregroundColor(.gray)
+                    Text(noteViewModel.note.description)
+                        .padding(.bottom, 5)
+                }
+                
+                Group {
+                    Text("Key Detail")
+                        .foregroundColor(.gray)
+                    Text(noteViewModel.note.keyDetail)
+                        .padding(.bottom, 5)
+                }
+                
+                Group {
+                    Text("This Reaveals...")
+                        .foregroundColor(.gray)
+                    Text(noteViewModel.note.revelation)
+                        .padding(.bottom, 5)
+                }
+                
+                Group {
+                    Text("Additional Thoughts")
+                        .foregroundColor(.gray)
+                    Text(noteViewModel.note.freeThought)
+                        .padding(.bottom)
+                    
+                }
+            }
+            .foregroundColor(colorScheme == .dark ? .black : .white)
+            .background(.mint)
+            .cornerRadius(30)
+            .padding()
+
         }
-        .foregroundColor(colorScheme == .dark ? .black : .white)
-        .frame(width: 300, height: 600)
-        .background(.mint)
-        .cornerRadius(30)
-        .padding()
-    }
     
     init(noteViewModel: SchoolWorkNoteViewModel) {
         self.noteViewModel = noteViewModel

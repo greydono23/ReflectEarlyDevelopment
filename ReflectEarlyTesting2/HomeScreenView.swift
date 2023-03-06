@@ -18,7 +18,7 @@ struct HomeScreenView: View {
                             Label("", systemImage: "house")
                         }
                     
-                    NewNoteView()
+                    ChooseNoteTypeView()
                         .tabItem {
                             Label("", systemImage: "square.and.pencil")
                         }
