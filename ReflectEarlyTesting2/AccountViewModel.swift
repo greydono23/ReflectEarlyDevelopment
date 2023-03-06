@@ -64,7 +64,7 @@ class AccountViewModel: ObservableObject {
         .store(in: &cancellables)
     }
     
-    func addSchoolWorkNote(_ note: SchoolWorkNote) {
+    func addSchoolWorkNote(_ note: SchoolWorkNoteModel) {
         schoolWorkNoteRepository.add(note)
     }
     
@@ -76,7 +76,7 @@ class AccountViewModel: ObservableObject {
         independentProjectNoteRepository.add(note)
     }
     
-    func addSummerProgramNote(_ note: SummerProgramNote) {
+    func addSummerProgramNote(_ note: SummerProgramModel) {
         summerProgramNoteRepository.add(note)
     }
     

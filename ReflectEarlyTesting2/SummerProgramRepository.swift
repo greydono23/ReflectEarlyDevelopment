@@ -16,7 +16,7 @@ class SummerProgramRepository: ObservableObject {
 
     private var userId = ""
     
-    @Published var summerProgramNotes: [SummerProgramNote] = []
+    @Published var summerProgramNotes: [SummerProgramModel] = []
     
     private var cancellables: Set<AnyCancellable> = []
         
@@ -51,12 +51,12 @@ class SummerProgramRepository: ObservableObject {
                 }
                 
                 self.summerProgramNotes = querySnapshot?.documents.compactMap { document in
-                    try? document.data(as: SummerProgramNote.self)
+                    try? document.data(as: SummerProgramModel.self)
                 } ?? []
             }
     }
     
-    func add(_ note: SummerProgramNote) {
+    func add(_ note: SummerProgramModel) {
         do {
             var newNote = note
             newNote.userId = userId

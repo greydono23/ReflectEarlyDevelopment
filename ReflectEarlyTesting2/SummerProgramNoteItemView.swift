@@ -37,6 +37,6 @@ struct SummerProgramNoteItemView: View {
 
 struct SummerProgramNoteItemView_Previews: PreviewProvider {
     static var previews: some View {
-        SummerProgramNoteItemView(noteViewModel: SummerProgramNoteViewModel(note: SummerProgramNote(noteName: "test", programName: "test", hours: 5.5, weeks: 3, description: "test", favorite: "test", revelation: "test", freeThought: "test")))
+        SummerProgramNoteItemView(noteViewModel: SummerProgramNoteViewModel(note: SummerProgramModel(noteName: "test", programName: "test", hours: 5.5, weeks: 3, description: "test", favorite: "test", revelation: "test", freeThought: "test")))
     }
 }

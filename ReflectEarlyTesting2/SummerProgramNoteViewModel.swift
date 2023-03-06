@@ -11,13 +11,13 @@ import Foundation
 class SummerProgramNoteViewModel: ObservableObject, Identifiable {
     
     private let noteRepository = SummerProgramRepository()
-    @Published var note: SummerProgramNote
+    @Published var note: SummerProgramModel
     
     private var cancellables: Set<AnyCancellable> = []
     
     var id = ""
     
-    init(note: SummerProgramNote) {
+    init(note: SummerProgramModel) {
         self.note = note
         
         $note

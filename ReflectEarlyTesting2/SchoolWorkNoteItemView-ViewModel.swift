@@ -11,13 +11,13 @@ import Foundation
 class SchoolWorkNoteItemViewModel: ObservableObject, Identifiable {
     
     private let noteRepository = SchoolWorkRepository()
-    @Published var note: SchoolWorkNote
+    @Published var note: SchoolWorkNoteModel
 
     private var cancellables: Set<AnyCancellable> = []
     
     var id = ""
     
-    init(note: SchoolWorkNote) {
+    init(note: SchoolWorkNoteModel) {
         self.note = note
         
         $note
@@ -26,7 +26,7 @@ class SchoolWorkNoteItemViewModel: ObservableObject, Identifiable {
             .store(in: &cancellables)
     }
     
-    func add(_ note: SchoolWorkNote) {
+    func add(_ note: SchoolWorkNoteModel) {
         noteRepository.add(note)
     }
     

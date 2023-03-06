@@ -10,7 +10,7 @@ import SwiftUI
 struct SchoolWorkNoteItemView: View {
     @Environment(\.colorScheme) var colorScheme
     
-    var noteViewModel: SchoolWorkNoteViewModel
+    var note: SchoolWorkNoteModel
     
     var body: some View {
             VStack {
@@ -18,42 +18,42 @@ struct SchoolWorkNoteItemView: View {
                     Text("Note Name")
                         .foregroundColor(.gray)
                         .padding(.top)
-                    Text(noteViewModel.note.noteName)
+                    Text(note.noteName)
                         .padding(.bottom, 5)
                 }
 
                 Group {
                     Text("Class/Club Name")
                         .foregroundColor(.gray)
-                    Text(noteViewModel.note.className)
+                    Text(note.className)
                         .padding(.bottom, 5)
                 }
             
                 Group {
                     Text("Description")
                         .foregroundColor(.gray)
-                    Text(noteViewModel.note.description)
+                    Text(note.description)
                         .padding(.bottom, 5)
                 }
                 
                 Group {
                     Text("Key Detail")
                         .foregroundColor(.gray)
-                    Text(noteViewModel.note.keyDetail)
+                    Text(note.keyDetail)
                         .padding(.bottom, 5)
                 }
                 
                 Group {
                     Text("This Reaveals...")
                         .foregroundColor(.gray)
-                    Text(noteViewModel.note.revelation)
+                    Text(note.revelation)
                         .padding(.bottom, 5)
                 }
                 
                 Group {
                     Text("Additional Thoughts")
                         .foregroundColor(.gray)
-                    Text(noteViewModel.note.freeThought)
+                    Text(note.freeThought)
                         .padding(.bottom)
                     
                 }
@@ -65,13 +65,8 @@ struct SchoolWorkNoteItemView: View {
 
         }
     
-    init(noteViewModel: SchoolWorkNoteViewModel) {
-        self.noteViewModel = noteViewModel
+    init(note: SchoolWorkNoteModel) {
+        self.note = note
     }
 }
 
-struct ViewNotesView_Previews: PreviewProvider {
-    static var previews: some View {
-        SchoolWorkNoteItemView(noteViewModel: SchoolWorkNoteViewModel(note: SchoolWorkNote(noteName: "test", className: "test", description: "test", keyDetail: "test", revelation: "test", freeThought: "test")))
-    }
-}

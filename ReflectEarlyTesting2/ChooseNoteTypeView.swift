@@ -101,7 +101,7 @@ struct ChooseNoteTypeView: View {
                     
                     /// Summer Program
                     NavigationLink {
-                        SummerProgramNoteView(accountViewModel: AccountViewModel())
+                        SummerProgramView()
                     } label: {
                         HStack {
                             Image(systemName: "text.magnifyingglass")
