@@ -16,7 +16,7 @@ class SchoolWorkRepository: ObservableObject {
 
     private var userId = ""
     
-    @Published var schoolWorkNotes: [SchoolWorkNote] = []
+    @Published var schoolWorkNotes: [SchoolWorkNoteModel] = []
     
     private var cancellables: Set<AnyCancellable> = []
         
@@ -51,12 +51,12 @@ class SchoolWorkRepository: ObservableObject {
                 }
                 
                 self.schoolWorkNotes = querySnapshot?.documents.compactMap { document in
-                    try? document.data(as: SchoolWorkNote.self)
+                    try? document.data(as: SchoolWorkNoteModel.self)
                 } ?? []
             }
     }
     
-    func add(_ note: SchoolWorkNote) {
+    func add(_ note: SchoolWorkNoteModel) {
         do {
             var newNote = note
             newNote.userId = userId

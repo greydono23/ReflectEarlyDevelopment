@@ -29,7 +29,7 @@
 		7F9937BE29ADB40F0090283E /* LoginView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937BD29ADB40F0090283E /* LoginView-ViewModel.swift */; };
 		7F9937D029AE4EAE0090283E /* SchoolWorkNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937CF29AE4EAE0090283E /* SchoolWorkNoteView.swift */; };
 		7F9937D629AFE3850090283E /* SchoolWorkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937D529AFE3850090283E /* SchoolWorkRepository.swift */; };
-		7F9937D929AFE5C50090283E /* SchoolWorkNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937D829AFE5C50090283E /* SchoolWorkNote.swift */; };
+		7F9937D929AFE5C50090283E /* SchoolWorkNoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937D829AFE5C50090283E /* SchoolWorkNoteModel.swift */; };
 		7F9937DC29AFF4610090283E /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F9937DB29AFF4610090283E /* FirebaseFirestoreSwift */; };
 		7F9937DE29B030710090283E /* SchoolWorkNoteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937DD29B030710090283E /* SchoolWorkNoteItemView.swift */; };
 		7F9937E229B030CB0090283E /* SchoolWorkNoteItemView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937E129B030CB0090283E /* SchoolWorkNoteItemView-ViewModel.swift */; };
@@ -47,7 +47,7 @@
 		7F9937FE29B3DA0D0090283E /* IndependentProjectNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937FD29B3DA0D0090283E /* IndependentProjectNoteViewModel.swift */; };
 		7F99380029B3DA3D0090283E /* IndependentProjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937FF29B3DA3D0090283E /* IndependentProjectRepository.swift */; };
 		7F99380229B3DADD0090283E /* IndependentProjectNoteItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99380129B3DADD0090283E /* IndependentProjectNoteItemView.swift */; };
-		7F99380429B45CE20090283E /* SummerProgramNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99380329B45CE20090283E /* SummerProgramNoteView.swift */; };
+		7F99380429B45CE20090283E /* SummerProgramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99380329B45CE20090283E /* SummerProgramView.swift */; };
 		7F99380629B45E640090283E /* SummerProgramNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99380529B45E640090283E /* SummerProgramNote.swift */; };
 		7F99380829B45F180090283E /* SummerProgramNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99380729B45F180090283E /* SummerProgramNoteViewModel.swift */; };
 		7F99380A29B45F3E0090283E /* SummerProgramRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99380929B45F3E0090283E /* SummerProgramRepository.swift */; };
@@ -88,7 +88,7 @@
 		7F9937BD29ADB40F0090283E /* LoginView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView-ViewModel.swift"; sourceTree = "<group>"; };
 		7F9937CF29AE4EAE0090283E /* SchoolWorkNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolWorkNoteView.swift; sourceTree = "<group>"; };
 		7F9937D529AFE3850090283E /* SchoolWorkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolWorkRepository.swift; sourceTree = "<group>"; };
-		7F9937D829AFE5C50090283E /* SchoolWorkNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolWorkNote.swift; sourceTree = "<group>"; };
+		7F9937D829AFE5C50090283E /* SchoolWorkNoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolWorkNoteModel.swift; sourceTree = "<group>"; };
 		7F9937DD29B030710090283E /* SchoolWorkNoteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolWorkNoteItemView.swift; sourceTree = "<group>"; };
 		7F9937E129B030CB0090283E /* SchoolWorkNoteItemView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SchoolWorkNoteItemView-ViewModel.swift"; sourceTree = "<group>"; };
 		7F9937E429B05DF90090283E /* SchoolWorkNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolWorkNoteViewModel.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		7F9937FD29B3DA0D0090283E /* IndependentProjectNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentProjectNoteViewModel.swift; sourceTree = "<group>"; };
 		7F9937FF29B3DA3D0090283E /* IndependentProjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentProjectRepository.swift; sourceTree = "<group>"; };
 		7F99380129B3DADD0090283E /* IndependentProjectNoteItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndependentProjectNoteItemView.swift; sourceTree = "<group>"; };
-		7F99380329B45CE20090283E /* SummerProgramNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerProgramNoteView.swift; sourceTree = "<group>"; };
+		7F99380329B45CE20090283E /* SummerProgramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerProgramView.swift; sourceTree = "<group>"; };
 		7F99380529B45E640090283E /* SummerProgramNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerProgramNote.swift; sourceTree = "<group>"; };
 		7F99380729B45F180090283E /* SummerProgramNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerProgramNoteViewModel.swift; sourceTree = "<group>"; };
 		7F99380929B45F3E0090283E /* SummerProgramRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummerProgramRepository.swift; sourceTree = "<group>"; };
@@ -219,7 +219,7 @@
 				7F9937CF29AE4EAE0090283E /* SchoolWorkNoteView.swift */,
 				7F9937EC29B3C11F0090283E /* CommunityServiceNoteView.swift */,
 				7F9937F729B3D72E0090283E /* IndependentProjectNoteView.swift */,
-				7F99380329B45CE20090283E /* SummerProgramNoteView.swift */,
+				7F99380329B45CE20090283E /* SummerProgramView.swift */,
 				7F99380D29B4DDAD0090283E /* WorkExperienceNoteView.swift */,
 				7F99381729B4E2A20090283E /* GeneralNoteView.swift */,
 				7F9937F429B3CBB50090283E /* NoteViews */,
@@ -291,7 +291,7 @@
 		7F9937D729AFE5A30090283E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7F9937D829AFE5C50090283E /* SchoolWorkNote.swift */,
+				7F9937D829AFE5C50090283E /* SchoolWorkNoteModel.swift */,
 				7F9937EE29B3C8F00090283E /* CommunityServiceNote.swift */,
 				7F9937F929B3D94D0090283E /* IndependentProjectNote.swift */,
 				7F99380529B45E640090283E /* SummerProgramNote.swift */,
@@ -422,7 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F9937D929AFE5C50090283E /* SchoolWorkNote.swift in Sources */,
+				7F9937D929AFE5C50090283E /* SchoolWorkNoteModel.swift in Sources */,
 				7F99381029B4DE690090283E /* SummerWorkNote.swift in Sources */,
 				2872CBBC29AD6DF200952AE5 /* ColorExample.swift in Sources */,
 				7F52DCB929AAA27100261C02 /* ContentView.swift in Sources */,
@@ -437,7 +437,7 @@
 				7F99380229B3DADD0090283E /* IndependentProjectNoteItemView.swift in Sources */,
 				7F99380829B45F180090283E /* SummerProgramNoteViewModel.swift in Sources */,
 				7F99381429B4DF9F0090283E /* WorkExperienceRepository.swift in Sources */,
-				7F99380429B45CE20090283E /* SummerProgramNoteView.swift in Sources */,
+				7F99380429B45CE20090283E /* SummerProgramView.swift in Sources */,
 				7F52DCC529AAA29000261C02 /* SettingsView.swift in Sources */,
 				7F99381E29B4E5B80090283E /* WorkExperienceNoteViewModel.swift in Sources */,
 				7F9937EF29B3C8F00090283E /* CommunityServiceNote.swift in Sources */,

@@ -104,7 +104,7 @@ struct SchoolWorkNoteView: View {
     }
     
     private func addNote() {
-        let note = SchoolWorkNote(noteName: noteName, className: className, description: description, keyDetail: keyDetail, revelation: reveal, freeThought: freeThought)
+        let note = SchoolWorkNoteModel(noteName: noteName, className: className, description: description, keyDetail: keyDetail, revelation: reveal, freeThought: freeThought)
         
         accountViewModel.addSchoolWorkNote(note)
     }

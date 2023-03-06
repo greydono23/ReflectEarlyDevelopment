@@ -8,7 +8,7 @@
 import FirebaseFirestoreSwift
 import Foundation
 
-struct SchoolWorkNote: Identifiable, Codable {
+struct SchoolWorkNoteModel: Identifiable, Codable {
     @DocumentID var id: String?
     var noteName: String
     var className: String
