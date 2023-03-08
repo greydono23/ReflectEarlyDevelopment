@@ -5,114 +5,72 @@
 //  Created by Greydon O'Keefe on 2/28/23.
 //
 
+import Firebase
+import FirebaseFirestoreSwift
+import Foundation
 import SwiftUI
 
 struct SchoolWorkNoteView: View {
-    @ObservedObject var accountViewModel: AccountViewModel
-    
-    @State private var noteName = ""
-    @State private var className = ""
-    @State private var description = ""
-    @State private var keyDetail = ""
-    @State private var reveal = ""
-    @State private var freeThought = ""
-    
+    @StateObject var schoolWorkViewModel = SchoolWorkViewModel()
+
     var body: some View {
-        
-//        GeometryReader { geometry in
-//            HStack {
-//                Spacer()
-//                ScrollView {
-//                    VStack(alignment: .leading) {
-//                        HStack {
-//                            Text("Note Name: ")
-//                            TextField("-", text: $noteName)
-//                        }
-//                        HStack {
-//                            Text("Class/Club: ")
-//                            TextField("-", text: $className)
-//                        }
-//
-//                        Text("Description")
-//                        TextEditor(text: $experienceDescription)
-//                            .background(.mint)
-//
-//                        Text("Key Detail")
-//                        TextEditor(text: $keyDetail)
-//                            .background(.mint)
-//
-//                        Text("What does this reveal about you?")
-//                        TextEditor(text: $reveal)
-//                            .background(.mint)
-//
-//                        Text("Reflect Freely!")
-//                        TextEditor(text: $freeThought)
-//                            .background(.mint)
-//                    }
-//                    .padding()
-//                    .frame(width: geometry.size.width*(9/10))
-//                    .background {
-//                        Rectangle()
-//                            .foregroundColor(.mint)
-//                            .frame(width: geometry.size.width*(19/20))
-//                    }
-//                }
-//
-//
-//
-//                Spacer()
-//            }
-//            
-//        }
-        
-        
-        NavigationView {
-            Form {
-                Section(header: Text("Note Name").foregroundColor(.mint)) {
-                    TextField("Note Name", text: $noteName)
-                }
-                Section(header: Text("Class/Club Name").foregroundColor(.mint)) {
-                    TextField("Class/Club Name", text: $className)
-                }
-
-                Section(header: Text("Describe Your Experience").foregroundColor(.mint)) {
-                    TextEditor(text: $description)
-                }
-                Section(header: Text("Specific Detail").foregroundColor(.mint)) {
-                    TextEditor(text: $keyDetail)
-                }
-                Section(header: Text("What Does this reveal about you?").foregroundColor(.mint)) {
-                    TextEditor(text: $reveal)
-                }
-                Section(header: Text("Write freely").foregroundColor(.mint)) {
-                    TextEditor(text: $freeThought)
-                }
-
+        Form {
+            Section(header: Text("Note Name").foregroundColor(.mint)) {
+                TextField("Note Name", text: $schoolWorkViewModel.model.noteName)
             }
-            .navigationTitle("New Note")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem {
-                    Button {
-                        addNote()
-                    } label: {
-                        Text("Save")
-                    }
-                }
+            Section(header: Text("Class/Club Name").foregroundColor(.mint)) {
+                TextField("Class/Club Name", text: $schoolWorkViewModel.model.className)
+            }
+
+            Section(header: Text("Describe Your Experience").foregroundColor(.mint)) {
+                TextEditor(text: $schoolWorkViewModel.model.description)
+            }
+            Section(header: Text("Specific Detail").foregroundColor(.mint)) {
+                TextEditor(text: $schoolWorkViewModel.model.keyDetail)
+            }
+            Section(header: Text("What Does this reveal about you?").foregroundColor(.mint)) {
+                TextEditor(text: $schoolWorkViewModel.model.revelation)
+            }
+            Section(header: Text("Write freely").foregroundColor(.mint)) {
+                TextEditor(text: $schoolWorkViewModel.model.freeThought)
             }
         }
-    }
-    
-    private func addNote() {
-        let note = SchoolWorkNoteModel(noteName: noteName, className: className, description: description, keyDetail: keyDetail, revelation: reveal, freeThought: freeThought)
-        
-        accountViewModel.addSchoolWorkNote(note)
-    }
-    
+        .navigationTitle("New Note")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem {
+                Button(action: schoolWorkViewModel.write, label: { Text("Save") })
+            }
+        }
+    }    
 }
 
-struct SchoolWorkNoteView_Previews: PreviewProvider {
-    static var previews: some View {
-        SchoolWorkNoteView(accountViewModel: AccountViewModel())
+class SchoolWorkViewModel: ObservableObject {
+    @Published var model = SchoolWorkModel()
+    
+    func write() {
+        do {
+            model.userId = Auth.auth().currentUser?.uid ?? ""
+            _ = try Firestore.firestore().collection("summerProgramReflections").addDocument(from: model)
+        } catch {
+            print("\(error.localizedDescription)")
+        }
     }
 }
+
+struct SchoolWorkModel: Identifiable, Codable {
+    @DocumentID var id: String?
+    var noteName: String = ""
+    var className: String = ""
+    var description: String = ""
+    var keyDetail: String = ""
+    var revelation: String = ""
+    var freeThought: String = ""
+    var userId: String?
+}
+
+//struct SchoolWorkNoteView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SchoolWorkNoteView(accountViewModel: AccountViewModel())
+//    }
+//}

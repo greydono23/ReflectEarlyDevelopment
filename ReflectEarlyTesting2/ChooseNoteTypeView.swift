@@ -32,7 +32,7 @@ struct ChooseNoteTypeView: View {
                     
                     /// classwork
                     NavigationLink {
-                        SchoolWorkNoteView(accountViewModel: AccountViewModel())
+                        SchoolWorkNoteView()
                     } label: {
                         HStack {
                             Image(systemName: "text.book.closed")
@@ -55,7 +55,7 @@ struct ChooseNoteTypeView: View {
                     
                     /// community service
                     NavigationLink {
-                        CommunityServiceNoteView(accountViewModel: AccountViewModel())
+                        CommunityServiceNoteView()
                     } label: {
                         HStack {
                             Image(systemName: "megaphone")
@@ -78,7 +78,7 @@ struct ChooseNoteTypeView: View {
                     
                     /// Independent Project
                     NavigationLink {
-                        IndependentProjectNoteView(accountViewModel: AccountViewModel())
+                        IndependentProjectNoteView()
                     } label: {
                         HStack {
                             Image(systemName: "keyboard")
@@ -124,7 +124,7 @@ struct ChooseNoteTypeView: View {
                     
                     /// Work
                     NavigationLink {
-                        WorkExperienceNoteView(accountViewModel: AccountViewModel())
+                        WorkExperienceNoteView()
                     } label: {
                         HStack {
                             Image(systemName: "hands.clap.fill")
@@ -147,7 +147,7 @@ struct ChooseNoteTypeView: View {
                     
                     /// Work
                     NavigationLink {
-                        GeneralNoteView(accountViewModel: AccountViewModel())
+                        GeneralNoteView()
                     } label: {
                         HStack {
                             Image(systemName: "star.fill")

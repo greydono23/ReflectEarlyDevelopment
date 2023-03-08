@@ -52,7 +52,7 @@ struct SummerProgramView: View {
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem {
-                Button(action: summerProgramViewModel.write, label: {Text("Save")})
+                Button(action: summerProgramViewModel.write, label: { Text("Save") })
             }
         }
     }

@@ -1,37 +1,37 @@
 //
-//  ViewSchoolWorkNotes.swift
+//  InspectGeneralNotesViewModel.swift
 //  ReflectEarlyTesting2
 //
-//  Created by Greydon O'Keefe on 3/6/23.
+//  Created by Greydon O'Keefe on 3/7/23.
 //
 
-import SwiftUI
 import Firebase
+import SwiftUI
 
-struct ViewSchoolWorkNotes: View {
+struct InspectGeneralNotesView: View {
     @Environment(\.colorScheme) var colorScheme
-    @ObservedObject var inspectSchoolWorkNotesViewModel = InspectSchoolWorkNotesViewModel()
+    @ObservedObject var inspectGeneralNotesViewModel = InspectGeneralNotesViewModel()
 
     var body: some View {
         ScrollView {
             VStack(spacing: 10) {
-                ForEach(inspectSchoolWorkNotesViewModel.notes) { noteModel in
-                    SchoolWorkNoteItemView(note: noteModel)
+                ForEach(inspectGeneralNotesViewModel.notes) { noteModel in
+                    GeneralNoteItemView(note: noteModel)
                         .padding()
                 }
             }
         }.onAppear(){
-            inspectSchoolWorkNotesViewModel.setup()
+            inspectGeneralNotesViewModel.setup()
         }
     }
 }
 
-class InspectSchoolWorkNotesViewModel: ObservableObject {
+class InspectGeneralNotesViewModel: ObservableObject {
     
-    @Published var notes: [SchoolWorkNoteModel] = []
+    @Published var notes: [GeneralNoteModel] = []
     
     func setup() {
-        Firestore.firestore().collection("schoolWorkReflections")
+        Firestore.firestore().collection("generalReflections")
             .whereField("userId", isEqualTo: Auth.auth().currentUser!.uid)
             .addSnapshotListener { querySnapshot, error in
                 if let error = error {
@@ -40,14 +40,14 @@ class InspectSchoolWorkNotesViewModel: ObservableObject {
                 }
                 
                 self.notes = querySnapshot?.documents.compactMap { document in
-                    try? document.data(as: SchoolWorkNoteModel.self)
+                    try? document.data(as: GeneralNoteModel.self)
                 } ?? []
             }
     }
 }
 
-struct ViewSchoolWorkNotes_Previews: PreviewProvider {
+struct InspectGeneralNotesView_Previews: PreviewProvider {
     static var previews: some View {
-        ViewSchoolWorkNotes()
+        InspectGeneralNotesView()
     }
 }

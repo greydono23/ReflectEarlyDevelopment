@@ -5,37 +5,85 @@
 //  Created by Greydon O'Keefe on 3/4/23.
 //
 
+import Firebase
+import FirebaseFirestoreSwift
+import Foundation
 import SwiftUI
 
 struct CommunityServiceNoteItemView: View {
     @Environment(\.colorScheme) var colorScheme
     
-    var noteViewModel: CommunityServiceNoteViewModel
+    var note: CommunityServiceModel
     
     var body: some View {
         VStack {
-            Text(noteViewModel.note.noteName)
-            Text(noteViewModel.note.organization)
-            Text("\(noteViewModel.note.hours, specifier: "%.2f")")
-            Text(noteViewModel.note.description)
-            Text(noteViewModel.note.keyDetail)
-            Text(noteViewModel.note.revelation)
-            Text(noteViewModel.note.freeThought)
+            Group {
+                Text("Note Name")
+                    .foregroundColor(.gray)
+                    .padding(.top)
+                Text(note.noteName)
+                    .padding(.bottom, 5)
+            }
+
+            Group {
+                Text("Class/Club Name")
+                    .foregroundColor(.gray)
+                Text(note.organization)
+                    .padding(.bottom, 5)
+            }
+            
+            Group {
+                Text("Hours")
+                    .foregroundColor(.gray)
+                Text("\(note.hours)")
+                    .padding(.bottom, 5)
+            }
+        
+            Group {
+                Text("Description")
+                    .foregroundColor(.gray)
+                Text(note.description)
+                    .padding(.bottom, 5)
+            }
+            
+            Group {
+                Text("Key Detail")
+                    .foregroundColor(.gray)
+                Text(note.keyDetail)
+                    .padding(.bottom, 5)
+            }
+            
+            Group {
+                Text("This Reaveals...")
+                    .foregroundColor(.gray)
+                Text(note.revelation)
+                    .padding(.bottom, 5)
+            }
+            
+            Group {
+                Text("Additional Thoughts")
+                    .foregroundColor(.gray)
+                Text(note.freeThought)
+                    .padding(.bottom)
+                
+            }
         }
         .foregroundColor(colorScheme == .dark ? .black : .white)
-        .frame(width: 300, height: 300)
         .background(.mint)
         .cornerRadius(30)
         .padding()
+
     }
     
-    init(noteViewModel: CommunityServiceNoteViewModel) {
-        self.noteViewModel = noteViewModel
+    init(note: CommunityServiceModel) {
+        self.note = note
     }
 }
 
-struct CommunityServiceNoteItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        CommunityServiceNoteItemView(noteViewModel: CommunityServiceNoteViewModel(note: CommunityServiceNote(noteName: "test", organization: "test", hours: 3.00, description: "test", keyDetail: "test", revelation: "test", freeThought: "test")))
-    }
-}
+
+
+//struct CommunityServiceNoteItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CommunityServiceNoteItemView(noteViewModel: CommunityServiceNoteViewModel(note: CommunityServiceNote(noteName: "test", organization: "test", hours: 3.00, description: "test", keyDetail: "test", revelation: "test", freeThought: "test")))
+//    }
+//}

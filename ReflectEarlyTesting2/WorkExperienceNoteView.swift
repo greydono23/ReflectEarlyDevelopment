@@ -5,79 +5,85 @@
 //  Created by Greydon O'Keefe on 3/5/23.
 //
 
+import Firebase
+import FirebaseFirestoreSwift
+import Foundation
 import SwiftUI
 
 struct WorkExperienceNoteView: View {
-    @ObservedObject var accountViewModel: AccountViewModel
-    
-    @State private var noteName = ""
-    @State private var employer = ""
-    @State private var hours = 1.0
-    @State private var weeks = 1.0
-    @State private var description = ""
-    @State private var keyDetail = ""
-    @State private var reveal = ""
-    @State private var freeThought = ""
+    @StateObject var workExperienceViewModel = WorkExperienceViewModel()
     
     var body: some View {
-        NavigationView {
-            Form {
-                Section(header: Text("Note Name").foregroundColor(.mint)) {
-                    TextField("Note Name", text: $noteName)
-                }
-                Section(header: Text("Employer").foregroundColor(.mint)) {
-                    TextField("Class/Club Name", text: $employer)
-                }
-                Section(header: Text("Time").foregroundColor(.mint)) {
-                    HStack {
-                        Slider(value: $hours, in: 0...5, step: 0.25)
-                        Text("Hours/Day: \(hours, specifier: "%.2f")")
-                            .foregroundColor(.mint)
-                    }
-                    HStack {
-                        Slider(value: $weeks, in: 0...10, step: 0.5)
-                        Text("Weeks: \(weeks, specifier: "%.2f")")
-                            .foregroundColor(.mint)
-                    }
-                }
-                Section(header: Text("Describe Your Experience").foregroundColor(.mint)) {
-                    TextEditor(text: $description)
-                }
-                Section(header: Text("Specific Detail").foregroundColor(.mint)) {
-                    TextEditor(text: $keyDetail)
-                }
-                Section(header: Text("What Does this reveal about you?").foregroundColor(.mint)) {
-                    TextEditor(text: $reveal)
-                }
-                Section(header: Text("Write freely").foregroundColor(.mint)) {
-                    TextEditor(text: $freeThought)
-                }
-
+        Form {
+            Section(header: Text("Note Name").foregroundColor(.mint)) {
+                TextField("Note Name", text: $workExperienceViewModel.model.noteName)
             }
-            .navigationTitle("New Note")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem {
-                    Button {
-                        addNote()
-                    } label: {
-                        Text("Save")
-                    }
+            Section(header: Text("Employer").foregroundColor(.mint)) {
+                TextField("Class/Club Name", text: $workExperienceViewModel.model.employer)
+            }
+            Section(header: Text("Time").foregroundColor(.mint)) {
+                HStack {
+                    Slider(value: $workExperienceViewModel.model.hours, in: 0...5, step: 0.25)
+                    Text("Hours/Day: \(workExperienceViewModel.model.hours, specifier: "%.2f")")
+                        .foregroundColor(.mint)
                 }
+                HStack {
+                    Slider(value: $workExperienceViewModel.model.weeks, in: 0...10, step: 0.5)
+                    Text("Weeks: \(workExperienceViewModel.model.weeks, specifier: "%.2f")")
+                        .foregroundColor(.mint)
+                }
+            }
+            Section(header: Text("Describe Your Experience").foregroundColor(.mint)) {
+                TextEditor(text: $workExperienceViewModel.model.description)
+            }
+            Section(header: Text("Specific Detail").foregroundColor(.mint)) {
+                TextEditor(text: $workExperienceViewModel.model.keyDetail)
+            }
+            Section(header: Text("What Does this reveal about you?").foregroundColor(.mint)) {
+                TextEditor(text: $workExperienceViewModel.model.revelation)
+            }
+            Section(header: Text("Write freely").foregroundColor(.mint)) {
+                TextEditor(text: $workExperienceViewModel.model.freeThought)
+            }
+
+        }
+        .navigationTitle("New Note")
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem {
+                Button(action: workExperienceViewModel.write, label: { Text("Save") })
             }
         }
     }
-    
-    private func addNote() {
-        let note = WorkExperienceNote(noteName: noteName, employer: employer, description: description, keyDetail: keyDetail, revelation: reveal, freeThought: freeThought)
-        
-        accountViewModel.addWorkExperienceNote(note)
-    }
-    
 }
 
-struct WorkExperienceNoteView_Previews: PreviewProvider {
-    static var previews: some View {
-        WorkExperienceNoteView(accountViewModel: AccountViewModel())
+class WorkExperienceViewModel: ObservableObject {
+    @Published var model = WorkExperienceModel()
+    
+    func write() {
+        do {
+            model.userId = Auth.auth().currentUser?.uid ?? ""
+            _ = try Firestore.firestore().collection("workExperienceReflections").addDocument(from: model)
+        } catch {
+            print("\(error.localizedDescription)")
+        }
     }
 }
+
+struct WorkExperienceModel: Identifiable, Codable {
+    @DocumentID var id: String?
+    var noteName: String = ""
+    var employer: String = ""
+    var hours: Double = 1.0
+    var weeks: Double = 1.0
+    var description: String = ""
+    var keyDetail: String = ""
+    var revelation: String = ""
+    var freeThought: String = ""
+    var userId: String?
+}
+//struct WorkExperienceNoteView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        WorkExperienceNoteView(accountViewModel: AccountViewModel())
+//    }
+//}

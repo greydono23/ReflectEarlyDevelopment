@@ -10,31 +10,68 @@ import SwiftUI
 struct GeneralNoteItemView: View {
     @Environment(\.colorScheme) var colorScheme
     
-    var noteViewModel: GeneralNoteViewModel
+    var note: GeneralNoteModel
     
     var body: some View {
         VStack {
-            Text(noteViewModel.note.noteName)
-            Text(noteViewModel.note.activity)
-            Text(noteViewModel.note.description)
-            Text(noteViewModel.note.keyDetail)
-            Text(noteViewModel.note.revelation)
-            Text(noteViewModel.note.freeThought)
+            Group {
+                Text("Note Name")
+                    .foregroundColor(.gray)
+                    .padding(.top)
+                Text(note.noteName)
+                    .padding(.bottom, 5)
+            }
+
+            Group {
+                Text("Activity")
+                    .foregroundColor(.gray)
+                Text(note.activity)
+                    .padding(.bottom, 5)
+            }
+        
+            Group {
+                Text("Description")
+                    .foregroundColor(.gray)
+                Text(note.description)
+                    .padding(.bottom, 5)
+            }
+            
+            Group {
+                Text("Key Detail")
+                    .foregroundColor(.gray)
+                Text(note.keyDetail)
+                    .padding(.bottom, 5)
+            }
+            
+            Group {
+                Text("This Reaveals...")
+                    .foregroundColor(.gray)
+                Text(note.revelation)
+                    .padding(.bottom, 5)
+            }
+            
+            Group {
+                Text("Additional Thoughts")
+                    .foregroundColor(.gray)
+                Text(note.freeThought)
+                    .padding(.bottom)
+                
+            }
         }
         .foregroundColor(colorScheme == .dark ? .black : .white)
-        .frame(width: 300, height: 300)
         .background(.mint)
         .cornerRadius(30)
         .padding()
+
     }
     
-    init(noteViewModel: GeneralNoteViewModel) {
-        self.noteViewModel = noteViewModel
+    init(note: GeneralNoteModel) {
+        self.note = note
     }
 }
 
-struct GeneralNoteItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        GeneralNoteItemView(noteViewModel: GeneralNoteViewModel(note: GeneralNote(noteName: "test", activity: "test", hours: 3, description: "test", keyDetail: "test", revelation: "test", freeThought: "test")))
-    }
-}
+//struct GeneralNoteItemView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GeneralNoteItemView(noteViewModel: GeneralNoteViewModel(note: GeneralNote(noteName: "test", activity: "test", hours: 3, description: "test", keyDetail: "test", revelation: "test", freeThought: "test")))
+//    }
+//}
