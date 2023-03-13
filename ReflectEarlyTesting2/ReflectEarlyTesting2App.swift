@@ -15,6 +15,7 @@ struct ReflectEarlyTesting2App: App {
     init() {
         FirebaseApp.configure()
         authenticationService.setup()
+        StudentService.studentService.setup()
     }
     
     var body: some Scene {        

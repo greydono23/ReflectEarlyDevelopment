@@ -115,8 +115,11 @@ class ResumeViewModel: ObservableObject {
 //                self.userName = docu
 //            }
         
-        serviceNotesViewModel.setup()
-        totalCommunityServiceHours = serviceNotesViewModel.getTotalCommunityServiceHours()
+        serviceNotesViewModel.setup() {
+            let cms = self.serviceNotesViewModel.getTotalCommunityServiceHours()
+            print("CMS: \(cms)")
+            self.totalCommunityServiceHours = cms
+        }
     }
 }
 

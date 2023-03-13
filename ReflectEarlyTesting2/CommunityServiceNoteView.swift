@@ -12,13 +12,17 @@ import SwiftUI
 
 struct CommunityServiceNoteView: View {
     @StateObject var communityServiceViewModel = CommunityServiceViewModel()
-    
+    @ObservedObject var studentService = StudentService.studentService
     @State private var presentNewOrganizationForm = false
     
     var body: some View {
         Form {
             Section(header: Text("New Organization")) {
-                TextField("", text: $communityServiceViewModel.model.organization)
+                Picker("Organization", selection: $communityServiceViewModel.model.organization) {
+                    ForEach(studentService.student?.organizations ?? [], id: \.self) { organization in
+                        Text(organization)
+                    }
+                }
                 Button(action: {
                     presentNewOrganizationForm = true
                 }, label: {
@@ -33,7 +37,11 @@ struct CommunityServiceNoteView: View {
                 .alert("Login", isPresented: $presentNewOrganizationForm, actions: {
                     TextField("New Organization", text: $communityServiceViewModel.newOrganization)
                     
-                    Button("Create", action: { })
+                    Button("Create", action: {
+                        if !(studentService.student?.organizations.contains(communityServiceViewModel.newOrganization) ?? false) {
+                            studentService.student?.organizations.append(communityServiceViewModel.newOrganization)
+                        }
+                    })
                     Button("Cancel", role: .cancel, action: { communityServiceViewModel.newOrganization = "" })
                         .tint(.red)
                 }, message: {
@@ -91,10 +99,6 @@ class CommunityServiceViewModel: ObservableObject {
         }
     }
      
-    func addOrganization() {
-        
-
-    }
 }
 
 struct CommunityServiceModel: Identifiable, Codable {

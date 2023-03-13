@@ -42,7 +42,7 @@ class InspectServiceNotesViewModel: ObservableObject {
     
     @Published var notes: [CommunityServiceModel] = []
     
-    func setup() {
+    func setup(completionHandler: (() -> Void)? = nil) {
         Firestore.firestore().collection("communityServiceReflections")
             .whereField("userId", isEqualTo: Auth.auth().currentUser!.uid)
             .addSnapshotListener { querySnapshot, error in
@@ -54,6 +54,10 @@ class InspectServiceNotesViewModel: ObservableObject {
                 self.notes = querySnapshot?.documents.compactMap { document in
                     try? document.data(as: CommunityServiceModel.self)
                 } ?? []
+                
+                if let completionHandler = completionHandler {
+                    completionHandler()
+                }
             }
     }
     

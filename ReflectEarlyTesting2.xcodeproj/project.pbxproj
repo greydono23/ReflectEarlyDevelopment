@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2812086C29BFC2670098C3AC /* StudentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2812086B29BFC2670098C3AC /* StudentService.swift */; };
 		2872CBB829AD694A00952AE5 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2872CBB729AD694A00952AE5 /* HomeScreenView.swift */; };
 		2872CBBA29AD69B000952AE5 /* InitialLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2872CBB929AD69B000952AE5 /* InitialLoginView.swift */; };
 		2872CBBE29AD6F3C00952AE5 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2872CBBD29AD6F3C00952AE5 /* AuthenticationService.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2812086B29BFC2670098C3AC /* StudentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentService.swift; sourceTree = "<group>"; };
 		2872CBB729AD694A00952AE5 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		2872CBB929AD69B000952AE5 /* InitialLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialLoginView.swift; sourceTree = "<group>"; };
 		2872CBBD29AD6F3C00952AE5 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				2872CBBD29AD6F3C00952AE5 /* AuthenticationService.swift */,
+				2812086B29BFC2670098C3AC /* StudentService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F99382829B7CA8E0090283E /* InspectSchoolWorkNotes.swift in Sources */,
+				2812086C29BFC2670098C3AC /* StudentService.swift in Sources */,
 				2872CBBA29AD69B000952AE5 /* InitialLoginView.swift in Sources */,
 				2872CBBE29AD6F3C00952AE5 /* AuthenticationService.swift in Sources */,
 				7F08942329BD8B8700082BAC /* ResourcesView.swift in Sources */,
