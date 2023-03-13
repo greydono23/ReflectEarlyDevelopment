@@ -13,15 +13,23 @@ struct InspectSchoolNotesView: View {
     @ObservedObject var inspectSchoolWorkNotesViewModel = InspectSchoolWorkNotesViewModel()
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 10) {
-                ForEach(inspectSchoolWorkNotesViewModel.notes) { noteModel in
-                    SchoolWorkNoteItemView(note: noteModel)
-                        .padding()
+        GeometryReader { geometry in
+            ScrollView {
+                VStack(spacing: 10) {
+                    ForEach(inspectSchoolWorkNotesViewModel.notes) { noteModel in
+                        SchoolWorkNoteItemView(note: noteModel)
+                            .frame(width: geometry.size.width*(9/10))
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(.purple.opacity(0.5), lineWidth: 2)
+                            }
+                            .padding()
+                    }
                 }
             }
-        }.onAppear(){
-            inspectSchoolWorkNotesViewModel.setup()
+            .onAppear() {
+                inspectSchoolWorkNotesViewModel.setup()
+            }
         }
     }
 }
@@ -46,8 +54,8 @@ class InspectSchoolWorkNotesViewModel: ObservableObject {
     }
 }
 
-struct ViewSchoolWorkNotes_Previews: PreviewProvider {
-    static var previews: some View {
-        InspectSchoolNotesView()
-    }
-}
+//struct ViewSchoolWorkNotes_Previews: PreviewProvider {
+//    static var previews: some View {
+//        InspectSchoolNotesView()
+//    }
+//}

@@ -10,23 +10,35 @@ import SwiftUI
 
 struct InpsectServiceNotesView: View {
     @Environment(\.colorScheme) var colorScheme
-    @ObservedObject var inspectServiceNotesViewModel = InspectServiceNotesViewModel()
+    @ObservedObject var serviceNotesViewModel = InspectServiceNotesViewModel.serviceNotesViewModel
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 10) {
-                ForEach(inspectServiceNotesViewModel.notes) { noteModel in
-                    CommunityServiceNoteItemView(note: noteModel)
-                        .padding()
+            
+        GeometryReader { geometry in
+            ScrollView {
+                VStack(spacing: 10) {
+                    ForEach(serviceNotesViewModel.notes) { noteModel in
+                        CommunityServiceNoteItemView(note: noteModel)
+                            .frame(width: geometry.size.width*(9/10))
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(.purple.opacity(0.5), lineWidth: 2)
+                            }
+                            .padding()
+                    }
                 }
             }
-        }.onAppear(){
-            inspectServiceNotesViewModel.setup()
+            .onAppear() {
+                serviceNotesViewModel.setup()
+            }
         }
+        
     }
 }
 
 class InspectServiceNotesViewModel: ObservableObject {
+    
+    static let serviceNotesViewModel: InspectServiceNotesViewModel = InspectServiceNotesViewModel()
     
     @Published var notes: [CommunityServiceModel] = []
     
@@ -35,7 +47,7 @@ class InspectServiceNotesViewModel: ObservableObject {
             .whereField("userId", isEqualTo: Auth.auth().currentUser!.uid)
             .addSnapshotListener { querySnapshot, error in
                 if let error = error {
-                    print("Error getting cards: \(error.localizedDescription)")
+                    print("Error getting notes: \(error.localizedDescription)")
                     return
                 }
                 
@@ -43,6 +55,16 @@ class InspectServiceNotesViewModel: ObservableObject {
                     try? document.data(as: CommunityServiceModel.self)
                 } ?? []
             }
+    }
+    
+    func getTotalCommunityServiceHours() -> Double {
+        var total = 0.0
+        for note in notes {
+            print("hours \(note.hours)")
+            total += note.hours
+        }
+        print("notes \(notes.count)")
+        return total
     }
 }
 

@@ -15,38 +15,40 @@ struct IndependentProjectNoteView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Note Name").foregroundColor(.mint)) {
-                TextField("Note Name", text: $independentProjectViewModel.model.noteName)
-            }
-            Section(header: Text("Project").foregroundColor(.mint)) {
+            Section(header: Text("Project")) {
                 TextField("Project Name", text: $independentProjectViewModel.model.projectName)
             }
-            Section(header: Text("Hours").foregroundColor(.mint)) {
+            Section(header: Text("Note Name")) {
+                TextField("Note Name", text: $independentProjectViewModel.model.noteName)
+            }
+            Section(header: Text("Hours")) {
                 HStack {
                     Slider(value: $independentProjectViewModel.model.hours, in: 0...5, step: 0.25)
+                        .tint(.mint)
                     Text("\(independentProjectViewModel.model.hours, specifier: "%.2f")")
-                        .foregroundColor(.mint)
+                        
                 }
             }
 
-            Section(header: Text("Describe Your Experience").foregroundColor(.mint)) {
+            Section(header: Text("Describe Your Experience")) {
                 TextEditor(text: $independentProjectViewModel.model.description)
             }
-            Section(header: Text("Specific Detail").foregroundColor(.mint)) {
+            Section(header: Text("Specific Detail")) {
                 TextEditor(text: $independentProjectViewModel.model.keyDetail)
             }
-            Section(header: Text("What Does this reveal about you?").foregroundColor(.mint)) {
+            Section(header: Text("What Does this reveal about you?")) {
                 TextEditor(text: $independentProjectViewModel.model.revelation)
             }
-            Section(header: Text("Write freely").foregroundColor(.mint)) {
+            Section(header: Text("Write freely")) {
                 TextEditor(text: $independentProjectViewModel.model.freeThought)
             }
         }
+        .font(.custom("Outfit-Light", size: 15))
         .navigationTitle("New Note")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem {
-                Button(action: independentProjectViewModel.write, label: { Text("Save") })
+                Button(action: independentProjectViewModel.write, label: { Text("SAVE").font(.custom("Outfit-Bold", size: 17)).foregroundColor(.mint) })
             }
         }
     }
@@ -77,8 +79,8 @@ struct IndependentProjectModel: Identifiable, Codable {
     var userId: String?
 }
 
-//struct IndependentProjectNoteView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        IndependentProjectNoteView(accountViewModel: AccountViewModel())
-//    }
-//}
+struct IndependentProjectNoteView_Previews: PreviewProvider {
+    static var previews: some View {
+        IndependentProjectNoteView()
+    }
+}

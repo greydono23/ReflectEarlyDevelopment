@@ -9,19 +9,26 @@ import Firebase
 import SwiftUI
 
 struct InspectProgramNotesView: View {
-    @Environment(\.colorScheme) var colorScheme
     @ObservedObject var inspectProgramNotesViewModel = InspectProgramNotesViewModel()
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 10) {
-                ForEach(inspectProgramNotesViewModel.notes) { noteModel in
-                    SummerProgramNoteItemView(note: noteModel)
-                        .padding()
+        GeometryReader { geometry in
+            ScrollView {
+                VStack(spacing: 10) {
+                    ForEach(inspectProgramNotesViewModel.notes) { noteModel in
+                        SummerProgramNoteItemView(note: noteModel)
+                            .frame(width: geometry.size.width*(9/10))
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(.purple.opacity(0.5), lineWidth: 2)
+                            }
+                            .padding()
+                    }
                 }
             }
-        }.onAppear(){
-            inspectProgramNotesViewModel.setup()
+            .onAppear() {
+                inspectProgramNotesViewModel.setup()
+            }
         }
     }
 }

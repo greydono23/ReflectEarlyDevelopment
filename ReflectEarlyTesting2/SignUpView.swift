@@ -11,28 +11,23 @@ import SwiftUI
 struct SignUpView: View {
     @Environment(\.colorScheme) var colorScheme
     
-    @StateObject private var viewModel = ViewModel()
-    
-    @State private var screenWidth = UIScreen.main.bounds.width
-    @State private var screenHeight = UIScreen.main.bounds.height
+    @ObservedObject private var viewModel = SignUpViewModel()
     
     var body: some View {
-        
-        NavigationView {
-            ZStack {
+        GeometryReader { geometry in
+            HStack {
+                Spacer()
                 VStack {
                     Spacer()
                     Spacer()
                     
                     VStack {
                         Text("WELCOME")
-//                            .font(.title)
-                            .font(.custom("Teko-Light", size: 40)) // how to make size adaptive?
+                            .font(.custom("Outfit-Regular", size: 30))
                             .padding(.bottom, 20)
                         Text("SIGN UP TO BEGIN REFLECTING ON YOUR HARD WORK!")
-//                            .font(.headline)
-                            .font(.custom("Teko-Light", size: 25)) // how to make size adaptive?
-                            .frame(width: screenWidth/1.25)
+                            .font(.custom("Outfit-Light", size: 20))
+                            .frame(width: geometry.size.width/1.25)
                             .multilineTextAlignment(.center)
                     }
                     
@@ -40,71 +35,59 @@ struct SignUpView: View {
                     Spacer()
                     
                     VStack {
-
+                        
                         VStack {
                             TextField("example@email.com", text: $viewModel.email)
-//                                .font(.headline)
-                                .font(.custom("Teko-Light", size: 25)) // how to make size adaptive?
-                                .frame(width: screenWidth-50)
+                                .frame(width: geometry.size.width-50)
                             
                             Rectangle()
-                                .frame(width: screenWidth-50, height: 2)
+                                .frame(width: geometry.size.width-50, height: 2)
                                 .foregroundStyle(viewModel.validEmail() ? .mint : .gray)
                         }
                         .padding(.bottom, 10)
-
+                        
                         VStack {
                             SecureField("password", text: $viewModel.password)
-                                .font(.custom("Teko-Light", size: 25)) // how to make size adaptive?
-//                                .font(.headline)
-                                .frame(width: screenWidth-50)
+                                .frame(width: geometry.size.width-50)
                             
                             Rectangle()
-                                .frame(width: screenWidth-50, height: 2)
+                                .frame(width: geometry.size.width-50, height: 2)
                                 .foregroundStyle(viewModel.validPassword() ? .mint : .gray)
                         }
                         .padding(.bottom, 10)
-
+                        
                         VStack {
                             SecureField("confirm password", text: $viewModel.confirmPassword)
-                                .font(.custom("Teko-Light", size: 25)) // how to make size adaptive?
-//                                .font(.headline)
-                                .frame(width: screenWidth-50)
+                                .frame(width: geometry.size.width-50)
                             
                             Rectangle()
-                                .frame(width: screenWidth-50, height: 2)
+                                .frame(width: geometry.size.width-50, height: 2)
                                 .foregroundStyle(viewModel.validConfirmPassword() ? .mint : .gray)
                         }
                         .padding(.bottom, 10)
                     }
+                    .font(.custom("Outfit-Regular", size: 20))
                     
                     Spacer()
                     
-                   
-                    Button {
+                    
+                    NavigationLink {
                         if viewModel.validSignUp() {
-                            viewModel.userSignUp()
+                            SignUpDataView(viewModel: viewModel)
                         }
                     } label: {
-                        Text("BEGIN")
-//                            .font(.title2)
-                            .font(.custom("Teko-Light", size: 30)) // how to make size adaptive?
-                            .bold()
+                        Text("CONTINUE")
+                            .font(.custom("Outfit-Medium", size: 25))
                             .foregroundColor(colorScheme == .dark ? .black : .white)
-                            .frame(width: screenWidth/2, height: 50)
-                            .background(.mint)
-                            .cornerRadius(20)
+                            .frame(width: geometry.size.width/2, height: 50)
+                            .background(viewModel.validSignUp() ? .mint : .gray.opacity(0.3))
+                            .cornerRadius(10)
                     }
-                    
                 }
-                
+                Spacer()
             }
-            
         }
-        
     }
-    
-    
 }
 
 struct SignUpView_Previews: PreviewProvider {

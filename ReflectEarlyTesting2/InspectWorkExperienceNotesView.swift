@@ -9,19 +9,26 @@ import Firebase
 import SwiftUI
 
 struct InspectWorkExperienceNotesView: View {
-    @Environment(\.colorScheme) var colorScheme
     @ObservedObject var inspectWorkExperienceNotesViewModel = InspectWorkNotesViewModel()
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 10) {
-                ForEach(inspectWorkExperienceNotesViewModel.notes) { noteModel in
-                    WorkExperienceNoteItemView(note: noteModel)
-                        .padding()
+        GeometryReader { geometry in
+            ScrollView {
+                VStack(spacing: 10) {
+                    ForEach(inspectWorkExperienceNotesViewModel.notes) { noteModel in
+                        WorkExperienceNoteItemView(note: noteModel)
+                            .frame(width: geometry.size.width*(9/10))
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(.purple.opacity(0.5), lineWidth: 2)
+                            }
+                            .padding()
+                    }
                 }
             }
-        }.onAppear(){
-            inspectWorkExperienceNotesViewModel.setup()
+            .onAppear() {
+                inspectWorkExperienceNotesViewModel.setup()
+            }
         }
     }
 }

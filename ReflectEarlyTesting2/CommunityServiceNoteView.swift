@@ -13,48 +13,74 @@ import SwiftUI
 struct CommunityServiceNoteView: View {
     @StateObject var communityServiceViewModel = CommunityServiceViewModel()
     
+    @State private var presentNewOrganizationForm = false
+    
     var body: some View {
         Form {
-            Section(header: Text("Note Name").foregroundColor(.mint)) {
-                TextField("Note Name", text: $communityServiceViewModel.model.noteName)
+            Section(header: Text("New Organization")) {
+                TextField("", text: $communityServiceViewModel.model.organization)
+                Button(action: {
+                    presentNewOrganizationForm = true
+                }, label: {
+                    HStack {
+                        Spacer();
+                        Text("Add Organization")
+                            .font(.custom("Outfit-Semibold", size: 15))
+                            .foregroundColor(.mint)
+                        Spacer()}
+                    
+                })
+                .alert("Login", isPresented: $presentNewOrganizationForm, actions: {
+                    TextField("New Organization", text: $communityServiceViewModel.newOrganization)
+                    
+                    Button("Create", action: { })
+                    Button("Cancel", role: .cancel, action: { communityServiceViewModel.newOrganization = "" })
+                        .tint(.red)
+                }, message: {
+                    Text("Type the name of the new organization")
+                })
+                
             }
-            Section(header: Text("Organization").foregroundColor(.mint)) {
-                TextField("Organization", text: $communityServiceViewModel.model.organization)
+            Section(header: Text("Note Name")) {
+                TextField("", text: $communityServiceViewModel.model.noteName)
             }
-            Section(header: Text("Hours").foregroundColor(.mint)) {
+            Section(header: Text("Hours")) {
                 HStack {
                     Slider(value: $communityServiceViewModel.model.hours, in: 0...5, step: 0.25)
+                        .tint(.mint)
                     Text("\(communityServiceViewModel.model.hours, specifier: "%.2f")")
-                        .foregroundColor(.mint)
                 }
             }
 
-            Section(header: Text("Describe Your Experience").foregroundColor(.mint)) {
+            Section(header: Text("Describe Your Experience")) {
                 TextEditor(text: $communityServiceViewModel.model.description)
             }
-            Section(header: Text("Specific Detail").foregroundColor(.mint)) {
+            Section(header: Text("Specific Detail")) {
                 TextEditor(text: $communityServiceViewModel.model.keyDetail)
             }
-            Section(header: Text("What Does this reveal about you?").foregroundColor(.mint)) {
+            Section(header: Text("What Does this reveal about you?")) {
                 TextEditor(text: $communityServiceViewModel.model.revelation)
             }
-            Section(header: Text("Write freely").foregroundColor(.mint)) {
+            Section(header: Text("Write freely")) {
                 TextEditor(text: $communityServiceViewModel.model.freeThought)
             }
 
         }
-        .navigationTitle("New Note")
+        .font(.custom("Outfit-Light", size: 15))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem {
-                Button(action: communityServiceViewModel.write, label: { Text("Save") })
+                Button(action: communityServiceViewModel.write, label: { Text("SAVE").font(.custom("Outfit-Bold", size: 17)).foregroundColor(.mint) })
             }
         }
     }
 }
 
+/// want it to pull users organizations so they can pick from this
 class CommunityServiceViewModel: ObservableObject {
     @Published var model = CommunityServiceModel()
+    
+    @Published var newOrganization = ""
     
     func write() {
         do {
@@ -63,6 +89,11 @@ class CommunityServiceViewModel: ObservableObject {
         } catch {
             print("\(error.localizedDescription)")
         }
+    }
+     
+    func addOrganization() {
+        
+
     }
 }
 
@@ -78,8 +109,8 @@ struct CommunityServiceModel: Identifiable, Codable {
     var userId: String?
 }
 
-//struct CommunityServiceNoteView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CommunityServiceNoteView(accountViewModel: AccountViewModel())
-//    }
-//}
+struct CommunityServiceNoteView_Previews: PreviewProvider {
+    static var previews: some View {
+        CommunityServiceNoteView()
+    }
+}

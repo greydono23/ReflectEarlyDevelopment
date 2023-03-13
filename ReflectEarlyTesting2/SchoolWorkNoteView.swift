@@ -15,31 +15,32 @@ struct SchoolWorkNoteView: View {
 
     var body: some View {
         Form {
-            Section(header: Text("Note Name").foregroundColor(.mint)) {
-                TextField("Note Name", text: $schoolWorkViewModel.model.noteName)
+            Section(header: Text("Class/Club")) {
+                TextField("", text: $schoolWorkViewModel.model.className)
             }
-            Section(header: Text("Class/Club Name").foregroundColor(.mint)) {
-                TextField("Class/Club Name", text: $schoolWorkViewModel.model.className)
+            Section(header: Text("Note Name")) {
+                TextField("", text: $schoolWorkViewModel.model.noteName)
             }
+            
 
-            Section(header: Text("Describe Your Experience").foregroundColor(.mint)) {
+            Section(header: Text("Describe Your Experience")) {
                 TextEditor(text: $schoolWorkViewModel.model.description)
             }
-            Section(header: Text("Specific Detail").foregroundColor(.mint)) {
+            Section(header: Text("Specific Detail")) {
                 TextEditor(text: $schoolWorkViewModel.model.keyDetail)
             }
-            Section(header: Text("What Does this reveal about you?").foregroundColor(.mint)) {
+            Section(header: Text("What Does this reveal about you?")) {
                 TextEditor(text: $schoolWorkViewModel.model.revelation)
             }
-            Section(header: Text("Write freely").foregroundColor(.mint)) {
+            Section(header: Text("Write freely")) {
                 TextEditor(text: $schoolWorkViewModel.model.freeThought)
             }
         }
-        .navigationTitle("New Note")
+        .font(.custom("Outfit-Light", size: 15))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem {
-                Button(action: schoolWorkViewModel.write, label: { Text("Save") })
+                Button(action: schoolWorkViewModel.write, label: { Text("SAVE").font(.custom("Outfit-Bold", size: 17)).foregroundColor(.mint) })
             }
         }
     }    
@@ -69,8 +70,8 @@ struct SchoolWorkModel: Identifiable, Codable {
     var userId: String?
 }
 
-//struct SchoolWorkNoteView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SchoolWorkNoteView(accountViewModel: AccountViewModel())
-//    }
-//}
+struct SchoolWorkNoteView_Previews: PreviewProvider {
+    static var previews: some View {
+        SchoolWorkNoteView()
+    }
+}

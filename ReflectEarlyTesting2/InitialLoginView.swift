@@ -60,14 +60,11 @@ struct InitialLoginView: View {
                         SignUpView()
                     } label: {
                         Text("GET STARTED")
-                        //                            .font(.title2)
-                            .font(.custom("Teko-Light", size: 30)) // how to make size adaptive
+                            .font(.custom("Outfit-Regular", size: 20))
                             .bold()
                             .foregroundStyle(colorScheme == .dark ? .black : .white)
                             .frame(width: UIScreen.main.bounds.width-40, height: 60)
-                            .background(
-                                Color.mint
-                            )
+                            .background(.mint)
                             .cornerRadius(20)
                     }
                     
@@ -75,8 +72,7 @@ struct InitialLoginView: View {
                         LoginView()
                     } label: {
                         Text("I ALREADY HAVE AN ACCOUNT")
-                        //                            .font(.title2)
-                            .font(.custom("Teko-Light", size: 30)) // how to make size adaptive?
+                            .font(.custom("Outfit-Regular", size: 20))
                             .bold()
                             .foregroundStyle(.mint)
                             .padding([.top, .bottom])

@@ -17,62 +17,60 @@ struct CommunityServiceNoteItemView: View {
     
     var body: some View {
         VStack {
-            Group {
-                Text("Note Name")
-                    .foregroundColor(.gray)
-                    .padding(.top)
-                Text(note.noteName)
-                    .padding(.bottom, 5)
+            VStack {
+                HStack {
+                    Text("Organization")
+                        .foregroundColor(.mint)
+                        .font(.custom("Outfit-Semibold", size: 20))
+                    Text("\(note.organization)")
+                        .font(.custom("Outfit-Medium", size: 17))
+                }
+                HStack {
+                    Text("Note Name")
+                        .foregroundColor(.mint)
+                        .font(.custom("Outfit-Semibold", size: 20))
+                    Text("\(note.noteName)")
+                        .font(.custom("Outfit-Medium", size: 17))
+                }
+                HStack {
+                    Text("Hours")
+                        .foregroundColor(.mint)
+                        .font(.custom("Outfit-Semibold", size: 20))
+                    Text("\(note.hours, specifier: "%.2f")")
+                        .font(.custom("Outfit-Medium", size: 17))
+                }
             }
-
-            Group {
-                Text("Class/Club Name")
-                    .foregroundColor(.gray)
-                Text(note.organization)
-                    .padding(.bottom, 5)
-            }
+            .padding(1)
             
-            Group {
-                Text("Hours")
-                    .foregroundColor(.gray)
-                Text("\(note.hours)")
-                    .padding(.bottom, 5)
-            }
-        
-            Group {
-                Text("Description")
-                    .foregroundColor(.gray)
-                Text(note.description)
-                    .padding(.bottom, 5)
-            }
+            Text("Description")
+                .font(.custom("Outfit-Semibold", size: 20))
+                .foregroundColor(.mint)
+            Text("\(note.description)")
+                .font(.custom("Outfit-Medium", size: 17))
+                .padding(.bottom, 1)
             
-            Group {
-                Text("Key Detail")
-                    .foregroundColor(.gray)
-                Text(note.keyDetail)
-                    .padding(.bottom, 5)
-            }
+            Text("Key Detail")
+                .font(.custom("Outfit-Semibold", size: 20))
+                .foregroundColor(.mint)
+            Text("\(note.keyDetail)")
+                .font(.custom("Outfit-Medium", size: 17))
+                .padding(.bottom, 1)
             
-            Group {
-                Text("This Reaveals...")
-                    .foregroundColor(.gray)
-                Text(note.revelation)
-                    .padding(.bottom, 5)
-            }
+            Text("This Reveals...")
+                .font(.custom("Outfit-Semibold", size: 20))
+                .foregroundColor(.mint)
+            Text("\(note.revelation)")
+                .font(.custom("Outfit-Medium", size: 17))
+                .padding(.bottom, 1)
             
-            Group {
-                Text("Additional Thoughts")
-                    .foregroundColor(.gray)
-                Text(note.freeThought)
-                    .padding(.bottom)
-                
-            }
+            Text("Additional Thoughts")
+                .font(.custom("Outfit-Semibold", size: 20))
+                .foregroundColor(.mint)
+            Text("\(note.freeThought)")
+                .font(.custom("Outfit-Medium", size: 17))
+                .padding(.bottom, 1)
         }
-        .foregroundColor(colorScheme == .dark ? .black : .white)
-        .background(.mint)
-        .cornerRadius(30)
         .padding()
-
     }
     
     init(note: CommunityServiceModel) {
@@ -80,10 +78,8 @@ struct CommunityServiceNoteItemView: View {
     }
 }
 
-
-
-//struct CommunityServiceNoteItemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CommunityServiceNoteItemView(noteViewModel: CommunityServiceNoteViewModel(note: CommunityServiceNote(noteName: "test", organization: "test", hours: 3.00, description: "test", keyDetail: "test", revelation: "test", freeThought: "test")))
-//    }
-//}
+struct CommunityServiceNoteItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        CommunityServiceNoteItemView(note: CommunityServiceModel(noteName: "test", organization: "test", hours: 3.00, description: "test", keyDetail: "test", revelation: "test", freeThought: "test"))
+    }
+}

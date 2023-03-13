@@ -15,43 +15,45 @@ struct WorkExperienceNoteView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Note Name").foregroundColor(.mint)) {
-                TextField("Note Name", text: $workExperienceViewModel.model.noteName)
-            }
-            Section(header: Text("Employer").foregroundColor(.mint)) {
+            Section(header: Text("Employer")) {
                 TextField("Class/Club Name", text: $workExperienceViewModel.model.employer)
             }
-            Section(header: Text("Time").foregroundColor(.mint)) {
+            Section(header: Text("Note Name")) {
+                TextField("Note Name", text: $workExperienceViewModel.model.noteName)
+            }
+            Section(header: Text("Time")) {
                 HStack {
                     Slider(value: $workExperienceViewModel.model.hours, in: 0...5, step: 0.25)
+                        .tint(.mint)
                     Text("Hours/Day: \(workExperienceViewModel.model.hours, specifier: "%.2f")")
-                        .foregroundColor(.mint)
+                        
                 }
                 HStack {
                     Slider(value: $workExperienceViewModel.model.weeks, in: 0...10, step: 0.5)
+                        .tint(.purple)
                     Text("Weeks: \(workExperienceViewModel.model.weeks, specifier: "%.2f")")
-                        .foregroundColor(.mint)
+                        
                 }
             }
-            Section(header: Text("Describe Your Experience").foregroundColor(.mint)) {
+            Section(header: Text("Describe Your Experience")) {
                 TextEditor(text: $workExperienceViewModel.model.description)
             }
-            Section(header: Text("Specific Detail").foregroundColor(.mint)) {
+            Section(header: Text("Specific Detail")) {
                 TextEditor(text: $workExperienceViewModel.model.keyDetail)
             }
-            Section(header: Text("What Does this reveal about you?").foregroundColor(.mint)) {
+            Section(header: Text("What Does this reveal about you?")) {
                 TextEditor(text: $workExperienceViewModel.model.revelation)
             }
-            Section(header: Text("Write freely").foregroundColor(.mint)) {
+            Section(header: Text("Write freely")) {
                 TextEditor(text: $workExperienceViewModel.model.freeThought)
             }
 
         }
-        .navigationTitle("New Note")
+        .font(.custom("Outfit-Light", size: 15))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem {
-                Button(action: workExperienceViewModel.write, label: { Text("Save") })
+                Button(action: workExperienceViewModel.write, label: { Text("SAVE").font(.custom("Outfit-Bold", size: 17)).foregroundColor(.mint) })
             }
         }
     }

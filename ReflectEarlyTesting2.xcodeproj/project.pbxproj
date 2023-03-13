@@ -10,6 +10,7 @@
 		2872CBB829AD694A00952AE5 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2872CBB729AD694A00952AE5 /* HomeScreenView.swift */; };
 		2872CBBA29AD69B000952AE5 /* InitialLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2872CBB929AD69B000952AE5 /* InitialLoginView.swift */; };
 		2872CBBE29AD6F3C00952AE5 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2872CBBD29AD6F3C00952AE5 /* AuthenticationService.swift */; };
+		7F08942329BD8B8700082BAC /* ResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F08942229BD8B8700082BAC /* ResourcesView.swift */; };
 		7F52DCA929AAA19400261C02 /* ReflectEarlyTesting2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F52DCA829AAA19400261C02 /* ReflectEarlyTesting2App.swift */; };
 		7F52DCAD29AAA19500261C02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F52DCAC29AAA19500261C02 /* Assets.xcassets */; };
 		7F52DCB029AAA19500261C02 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F52DCAF29AAA19500261C02 /* Preview Assets.xcassets */; };
@@ -22,6 +23,9 @@
 		7F52DCCA29AAA3CA00261C02 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7F52DCC929AAA3CA00261C02 /* FirebaseAuth */; };
 		7F52DCCC29AAA3CA00261C02 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 7F52DCCB29AAA3CA00261C02 /* FirebaseFirestore */; };
 		7F52DCD229ABF3C200261C02 /* Teko-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F52DCD129ABF3C200261C02 /* Teko-Light.ttf */; };
+		7F63A80A29BA0AB1001306F7 /* Outfit-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F63A80929BA0AB1001306F7 /* Outfit-VariableFont_wght.ttf */; };
+		7F63A80C29BAA1BD001306F7 /* SignUpDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F63A80B29BAA1BD001306F7 /* SignUpDataView.swift */; };
+		7F63A80E29BAD36B001306F7 /* ResumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F63A80D29BAD36B001306F7 /* ResumeView.swift */; };
 		7F9937BC29AD8DCE0090283E /* SignUpView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937BB29AD8DCE0090283E /* SignUpView-ViewModel.swift */; };
 		7F9937BE29ADB40F0090283E /* LoginView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937BD29ADB40F0090283E /* LoginView-ViewModel.swift */; };
 		7F9937D029AE4EAE0090283E /* SchoolWorkNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9937CF29AE4EAE0090283E /* SchoolWorkNoteView.swift */; };
@@ -44,13 +48,13 @@
 		7F99382F29B7CF960090283E /* InspectProgramNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99382E29B7CF960090283E /* InspectProgramNotesView.swift */; };
 		7F99383129B7D0500090283E /* InspectWorkExperienceNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99383029B7D0500090283E /* InspectWorkExperienceNotesView.swift */; };
 		7F99383329B7D0D80090283E /* InspectGeneralNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99383229B7D0D80090283E /* InspectGeneralNotesView.swift */; };
-		7F99383529B7DD430090283E /* InspectNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F99383429B7DD430090283E /* InspectNotesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2872CBB729AD694A00952AE5 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		2872CBB929AD69B000952AE5 /* InitialLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialLoginView.swift; sourceTree = "<group>"; };
 		2872CBBD29AD6F3C00952AE5 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		7F08942229BD8B8700082BAC /* ResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesView.swift; sourceTree = "<group>"; };
 		7F52DCA529AAA19400261C02 /* ReflectEarlyTesting2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReflectEarlyTesting2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F52DCA829AAA19400261C02 /* ReflectEarlyTesting2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectEarlyTesting2App.swift; sourceTree = "<group>"; };
 		7F52DCAC29AAA19500261C02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +67,9 @@
 		7F52DCC629AAA2E800261C02 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7F52DCD029ABCAF800261C02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F52DCD129ABF3C200261C02 /* Teko-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Teko-Light.ttf"; sourceTree = "<group>"; };
+		7F63A80929BA0AB1001306F7 /* Outfit-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Outfit-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		7F63A80B29BAA1BD001306F7 /* SignUpDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataView.swift; sourceTree = "<group>"; };
+		7F63A80D29BAD36B001306F7 /* ResumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeView.swift; sourceTree = "<group>"; };
 		7F9937BB29AD8DCE0090283E /* SignUpView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpView-ViewModel.swift"; sourceTree = "<group>"; };
 		7F9937BD29ADB40F0090283E /* LoginView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginView-ViewModel.swift"; sourceTree = "<group>"; };
 		7F9937CF29AE4EAE0090283E /* SchoolWorkNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolWorkNoteView.swift; sourceTree = "<group>"; };
@@ -84,7 +91,6 @@
 		7F99382E29B7CF960090283E /* InspectProgramNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectProgramNotesView.swift; sourceTree = "<group>"; };
 		7F99383029B7D0500090283E /* InspectWorkExperienceNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectWorkExperienceNotesView.swift; sourceTree = "<group>"; };
 		7F99383229B7D0D80090283E /* InspectGeneralNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectGeneralNotesView.swift; sourceTree = "<group>"; };
-		7F99383429B7DD430090283E /* InspectNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectNotesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +127,7 @@
 		7F52DCA729AAA19400261C02 /* ReflectEarlyTesting2 */ = {
 			isa = PBXGroup;
 			children = (
-				7F9937C529AE3DA00090283E /* LoginViews */,
+				7F9937C529AE3DA00090283E /* OnboardingViews */,
 				7F9937C729AE3DF10090283E /* StudentParentViews */,
 				7F9937C929AE3E430090283E /* Services */,
 				7F52DCAE29AAA19500261C02 /* Preview Content */,
@@ -142,19 +148,21 @@
 			isa = PBXGroup;
 			children = (
 				7F52DCD129ABF3C200261C02 /* Teko-Light.ttf */,
+				7F63A80929BA0AB1001306F7 /* Outfit-VariableFont_wght.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		7F9937C529AE3DA00090283E /* LoginViews */ = {
+		7F9937C529AE3DA00090283E /* OnboardingViews */ = {
 			isa = PBXGroup;
 			children = (
 				2872CBB929AD69B000952AE5 /* InitialLoginView.swift */,
-				7F52DCBD29AAA28F00261C02 /* SignUpView.swift */,
 				7F52DCBE29AAA29000261C02 /* LoginView.swift */,
+				7F52DCBD29AAA28F00261C02 /* SignUpView.swift */,
+				7F63A80B29BAA1BD001306F7 /* SignUpDataView.swift */,
 				7F9937C629AE3DC10090283E /* ViewModels */,
 			);
-			name = LoginViews;
+			name = OnboardingViews;
 			sourceTree = "<group>";
 		};
 		7F9937C629AE3DC10090283E /* ViewModels */ = {
@@ -171,6 +179,7 @@
 			children = (
 				7F9937DF29B0308D0090283E /* MainViews */,
 				7F9937C829AE3E1B0090283E /* NewNoteForms */,
+				7F9937F429B3CBB50090283E /* NoteViews */,
 			);
 			name = StudentParentViews;
 			sourceTree = "<group>";
@@ -185,7 +194,6 @@
 				7F99380329B45CE20090283E /* SummerProgramView.swift */,
 				7F99380D29B4DDAD0090283E /* WorkExperienceNoteView.swift */,
 				7F99382529B7CA580090283E /* GeneralNoteView.swift */,
-				7F9937F429B3CBB50090283E /* NoteViews */,
 			);
 			name = NewNoteForms;
 			sourceTree = "<group>";
@@ -224,7 +232,8 @@
 				7F52DCBA29AAA28F00261C02 /* UserView.swift */,
 				7F9937E629B064390090283E /* AccountView.swift */,
 				7F52DCBF29AAA29000261C02 /* SettingsView.swift */,
-				7F99383429B7DD430090283E /* InspectNotesView.swift */,
+				7F63A80D29BAD36B001306F7 /* ResumeView.swift */,
+				7F08942229BD8B8700082BAC /* ResourcesView.swift */,
 				7F99382929B7CD3B0090283E /* InspectViews */,
 			);
 			name = MainViews;
@@ -326,6 +335,7 @@
 				7F52DCAD29AAA19500261C02 /* Assets.xcassets in Resources */,
 				7F52DCC729AAA2E800261C02 /* GoogleService-Info.plist in Resources */,
 				7F52DCD229ABF3C200261C02 /* Teko-Light.ttf in Resources */,
+				7F63A80A29BA0AB1001306F7 /* Outfit-VariableFont_wght.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +349,7 @@
 				7F99382829B7CA8E0090283E /* InspectSchoolWorkNotes.swift in Sources */,
 				2872CBBA29AD69B000952AE5 /* InitialLoginView.swift in Sources */,
 				2872CBBE29AD6F3C00952AE5 /* AuthenticationService.swift in Sources */,
-				7F99383529B7DD430090283E /* InspectNotesView.swift in Sources */,
+				7F08942329BD8B8700082BAC /* ResourcesView.swift in Sources */,
 				7F99380C29B4604E0090283E /* SummerProgramNoteItemView.swift in Sources */,
 				7F99383129B7D0500090283E /* InspectWorkExperienceNotesView.swift in Sources */,
 				7F9937DE29B030710090283E /* SchoolWorkNoteItemView.swift in Sources */,
@@ -357,8 +367,10 @@
 				7F99380E29B4DDAD0090283E /* WorkExperienceNoteView.swift in Sources */,
 				2872CBB829AD694A00952AE5 /* HomeScreenView.swift in Sources */,
 				7F99381629B4E0210090283E /* WorkExperienceNoteItemView.swift in Sources */,
+				7F63A80C29BAA1BD001306F7 /* SignUpDataView.swift in Sources */,
 				7F52DCC029AAA29000261C02 /* UserView.swift in Sources */,
 				7F9937ED29B3C11F0090283E /* CommunityServiceNoteView.swift in Sources */,
+				7F63A80E29BAD36B001306F7 /* ResumeView.swift in Sources */,
 				7F52DCC229AAA29000261C02 /* ChooseNoteTypeView.swift in Sources */,
 				7F99382629B7CA580090283E /* GeneralNoteView.swift in Sources */,
 				7F9937BE29ADB40F0090283E /* LoginView-ViewModel.swift in Sources */,

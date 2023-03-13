@@ -15,44 +15,47 @@ struct SummerProgramView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Note Name").foregroundColor(.mint)) {
-                TextField("Note Name", text: $summerProgramViewModel.model.noteName)
-            }
-            Section(header: Text("Program").foregroundColor(.mint)) {
+            Section(header: Text("Program")) {
                 TextField("Program Name", text: $summerProgramViewModel.model.programName)
             }
-            Section(header: Text("Time").foregroundColor(.mint)) {
+            Section(header: Text("Note Name")) {
+                TextField("Note Name", text: $summerProgramViewModel.model.noteName)
+            }
+            Section(header: Text("Time")) {
                 HStack {
                     Slider(value: $summerProgramViewModel.model.hours, in: 0...5, step: 0.25)
+                        .tint(.mint)
                     Text("Hours/Day: \(summerProgramViewModel.model.hours, specifier: "%.2f")")
-                        .foregroundColor(.mint)
+                        
                 }
                 HStack {
                     Slider(value: $summerProgramViewModel.model.weeks, in: 0...10, step: 0.5)
+                        .tint(.purple)
                     Text("Weeks: \(summerProgramViewModel.model.weeks, specifier: "%.2f")")
-                        .foregroundColor(.mint)
+                        
                 }
             }
 
-            Section(header: Text("Describe Your Experience").foregroundColor(.mint)) {
+            Section(header: Text("Describe Your Experience")) {
                 TextEditor(text: $summerProgramViewModel.model.description)
             }
-            Section(header: Text("Favorite Lesson/Event").foregroundColor(.mint)) {
+            Section(header: Text("Favorite Lesson/Event")) {
                 TextEditor(text: $summerProgramViewModel.model.favorite)
             }
-            Section(header: Text("What Does this reveal about you?").foregroundColor(.mint)) {
+            Section(header: Text("What Does this reveal about you?")) {
                 TextEditor(text: $summerProgramViewModel.model.revelation)
             }
-            Section(header: Text("Write freely").foregroundColor(.mint)) {
+            Section(header: Text("Write freely")) {
                 TextEditor(text: $summerProgramViewModel.model.freeThought)
             }
 
         }
+        .font(.custom("Outfit-Light", size: 15))
         .navigationTitle("New Note")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem {
-                Button(action: summerProgramViewModel.write, label: { Text("Save") })
+                Button(action: summerProgramViewModel.write, label: { Text("SAVE").font(.custom("Outfit-Bold", size: 17)).foregroundColor(.mint) })
             }
         }
     }

@@ -15,38 +15,38 @@ struct GeneralNoteView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Note Name").foregroundColor(.mint)) {
+            Section(header: Text("Activity")) {
+                TextField("Activity", text: $generalNoteViewModel.model.activity)
+            }
+            Section(header: Text("Note Name")) {
                 TextField("Note Name", text: $generalNoteViewModel.model.noteName)
             }
-            Section(header: Text("Organization").foregroundColor(.mint)) {
-                TextField("Organization", text: $generalNoteViewModel.model.activity)
-            }
-            Section(header: Text("Hours").foregroundColor(.mint)) {
+            Section(header: Text("Hours")) {
                 HStack {
                     Slider(value: $generalNoteViewModel.model.hours, in: 0...5, step: 0.25)
+                        .tint(.mint)
                     Text("\(generalNoteViewModel.model.hours, specifier: "%.2f")")
-                        .foregroundColor(.mint)
                 }
             }
-            Section(header: Text("Describe Your Experience").foregroundColor(.mint)) {
+            Section(header: Text("Describe Your Experience")) {
                 TextEditor(text: $generalNoteViewModel.model.description)
             }
-            Section(header: Text("Specific Detail").foregroundColor(.mint)) {
+            Section(header: Text("Specific Detail")) {
                 TextEditor(text: $generalNoteViewModel.model.keyDetail)
             }
-            Section(header: Text("What Does this reveal about you?").foregroundColor(.mint)) {
+            Section(header: Text("What Does this reveal about you?")) {
                 TextEditor(text: $generalNoteViewModel.model.revelation)
             }
-            Section(header: Text("Write freely").foregroundColor(.mint)) {
+            Section(header: Text("Write freely")) {
                 TextEditor(text: $generalNoteViewModel.model.freeThought)
             }
 
         }
-        .navigationTitle("New Note")
+        .font(.custom("Outfit-Light", size: 15))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem {
-                Button(action: generalNoteViewModel.write, label: { Text("Save") })
+                Button(action: generalNoteViewModel.write, label: { Text("SAVE").font(.custom("Outfit-Bold", size: 17)).foregroundColor(.mint) })
             }
         }
     }

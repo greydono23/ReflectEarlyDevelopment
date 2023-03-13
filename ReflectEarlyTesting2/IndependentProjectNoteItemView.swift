@@ -14,60 +14,62 @@ struct IndependentProjectNoteItemView: View {
     
     var body: some View {
         VStack {
-            Group {
-                Text("Note Name")
-                    .foregroundColor(.gray)
-                    .padding(.top)
-                Text(note.noteName)
-                    .padding(.bottom, 5)
+            VStack {
+                HStack {
+                    
+                }
+                HStack {
+                    Text("Project")
+                        .foregroundColor(.mint)
+                        .font(.custom("Outfit-Semibold", size: 20))
+                    Text("\(note.projectName)")
+                        .font(.custom("Outfit-Medium", size: 17))
+                }
+                HStack {
+                    Text("Note Name")
+                        .foregroundColor(.mint)
+                        .font(.custom("Outfit-Semibold", size: 20))
+                    Text("\(note.noteName)")
+                        .font(.custom("Outfit-Medium", size: 17))
+                }
+                HStack {
+                    Text("Hours")
+                        .foregroundColor(.mint)
+                        .font(.custom("Outfit-Semibold", size: 20))
+                    Text("\(note.hours, specifier: "%.2f")")
+                        .font(.custom("Outfit-Medium", size: 17))
+                }
             }
-
-            Group {
-                Text("Class/Club Name")
-                    .foregroundColor(.gray)
-                Text(note.projectName)
-                    .padding(.bottom, 5)
-            }
+            .padding(1)
             
-            Group {
-                Text("Hours")
-                    .foregroundColor(.gray)
-                Text("\(note.hours)")
-                    .padding(.bottom, 5)
-            }
+            Text("Description")
+                .font(.custom("Outfit-Semibold", size: 20))
+                .foregroundColor(.mint)
+            Text("\(note.description)")
+                .font(.custom("Outfit-Medium", size: 17))
+                .padding(.bottom, 1)
             
-            Group {
-                Text("Description")
-                    .foregroundColor(.gray)
-                Text(note.description)
-                    .padding(.bottom, 5)
-            }
+            Text("Key Detail")
+                .font(.custom("Outfit-Semibold", size: 20))
+                .foregroundColor(.mint)
+            Text("\(note.keyDetail)")
+                .font(.custom("Outfit-Medium", size: 17))
+                .padding(.bottom, 1)
             
-            Group {
-                Text("Key Detail")
-                    .foregroundColor(.gray)
-                Text(note.keyDetail)
-                    .padding(.bottom, 5)
-            }
+            Text("This Reveals...")
+                .font(.custom("Outfit-Semibold", size: 20))
+                .foregroundColor(.mint)
+            Text("\(note.revelation)")
+                .font(.custom("Outfit-Medium", size: 17))
+                .padding(.bottom, 1)
             
-            Group {
-                Text("This Reaveals...")
-                    .foregroundColor(.gray)
-                Text(note.revelation)
-                    .padding(.bottom, 5)
-            }
-            
-            Group {
-                Text("Additional Thoughts")
-                    .foregroundColor(.gray)
-                Text(note.freeThought)
-                    .padding(.bottom)
-                
-            }
+            Text("Additional Thoughts")
+                .font(.custom("Outfit-Semibold", size: 20))
+                .foregroundColor(.mint)
+            Text("\(note.freeThought)")
+                .font(.custom("Outfit-Medium", size: 17))
+                .padding(.bottom, 1)
         }
-        .foregroundColor(colorScheme == .dark ? .black : .white)
-        .background(.mint)
-        .cornerRadius(30)
         .padding()
     }
     
@@ -76,8 +78,8 @@ struct IndependentProjectNoteItemView: View {
     }
 }
 
-//struct IndependentProjectNoteItemView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        IndependentProjectNoteItemView(noteViewModel: IndependentProjectNoteViewModel(note: IndependentProjectNote(noteName: "ip", projectName: "ip", hours: 2.75, description: "ip", keyDetail: "ip", revelation: "ip", freeThought: "ip")))
-//    }
-//}
+struct IndependentProjectNoteItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        IndependentProjectNoteItemView(note: IndependentProjectModel(noteName: "iOS Project", projectName: "100 Day Course", hours: 2.5, description: ""))
+    }
+}

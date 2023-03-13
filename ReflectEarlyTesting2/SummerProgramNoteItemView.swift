@@ -14,68 +14,72 @@ struct SummerProgramNoteItemView: View {
     
     var body: some View {
         VStack {
-            Group {
-                Text("Note Name")
-                    .foregroundColor(.gray)
-                    .padding(.top)
-                Text(note.noteName)
-                    .padding(.bottom, 5)
+            VStack {
+                HStack {
+                    Text("Program")
+                        .foregroundColor(.mint)
+                        .font(.custom("Outfit-Semibold", size: 20))
+                    Text("\(note.programName)")
+                        .font(.custom("Outfit-Medium", size: 17))
+                }
+                HStack {
+                    Text("Note Name")
+                        .foregroundColor(.mint)
+                        .font(.custom("Outfit-Semibold", size: 20))
+                    Text("\(note.noteName)")
+                        .font(.custom("Outfit-Medium", size: 17))
+                }
+                HStack {
+                    VStack {
+                        Text("Weeks")
+                            .foregroundColor(.mint)
+                            .font(.custom("Outfit-Semibold", size: 20))
+                        Text("\(note.weeks, specifier: "%.2f")")
+                            .font(.custom("Outfit-Medium", size: 17))
+                    }
+                    .padding(.trailing)
+                    VStack {
+                        Text("Hours")
+                            .foregroundColor(.mint)
+                            .font(.custom("Outfit-Semibold", size: 20))
+                        Text("\(note.hours, specifier: "%.2f")")
+                            .font(.custom("Outfit-Medium", size: 17))
+                    }
+                    .padding(.leading)
+                }
             }
-
-            Group {
-                Text("Class/Club Name")
-                    .foregroundColor(.gray)
-                Text(note.programName)
-                    .padding(.bottom, 5)
-            }
+            .padding(1)
             
-            Group {
-                Text("Hours")
-                    .foregroundColor(.gray)
-                Text("\(note.hours)")
-                    .padding(.bottom, 5)
-            }
+            Text("Description")
+                .font(.custom("Outfit-Semibold", size: 20))
+                .foregroundColor(.mint)
+            Text("\(note.description)")
+                .font(.custom("Outfit-Medium", size: 17))
+                .padding(.bottom, 1)
             
-            Group {
-                Text("Weeks")
-                    .foregroundColor(.gray)
-                Text("\(note.weeks)")
-                    .padding(.bottom, 5)
-            }
-        
-            Group {
-                Text("Description")
-                    .foregroundColor(.gray)
-                Text(note.description)
-                    .padding(.bottom, 5)
-            }
+            Text("Favorite Part/Lesson")
+                .font(.custom("Outfit-Semibold", size: 20))
+                .foregroundColor(.mint)
+            Text("\(note.favorite)")
+                .font(.custom("Outfit-Medium", size: 17))
+                .padding(.bottom, 1)
             
-            Group {
-                Text("Key Detail")
-                    .foregroundColor(.gray)
-                Text(note.favorite)
-                    .padding(.bottom, 5)
-            }
+            Text("This Reveals...")
+                .font(.custom("Outfit-Semibold", size: 20))
+                .foregroundColor(.mint)
+            Text("\(note.revelation)")
+                .font(.custom("Outfit-Medium", size: 17))
+                .padding(.bottom, 1)
             
-            Group {
-                Text("This Reaveals...")
-                    .foregroundColor(.gray)
-                Text(note.revelation)
-                    .padding(.bottom, 5)
-            }
-            
-            Group {
-                Text("Additional Thoughts")
-                    .foregroundColor(.gray)
-                Text(note.freeThought)
-                    .padding(.bottom)
-                
-            }
+            Text("Additional Thoughts")
+                .font(.custom("Outfit-Semibold", size: 20))
+                .foregroundColor(.mint)
+            Text("\(note.freeThought)")
+                .font(.custom("Outfit-Medium", size: 17))
+                .padding(.bottom, 1)
         }
-        .foregroundColor(colorScheme == .dark ? .black : .white)
-        .background(.mint)
-        .cornerRadius(30)
         .padding()
+        
     }
     
     init(note: SummerProgramModel) {
